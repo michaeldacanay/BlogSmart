@@ -1,7 +1,7 @@
 Original App Design Project - README Template
 ===
 
-# BlogShare
+# BlogSmart
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -11,10 +11,10 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-Welcome to BlogShare! You can use this application to read all kinds of blogs posted by others and share your own. You can write blogs, upload pictures, and share it with your friends. Not only that, we also have an AI tool which will summarize your blog post for you so that your audience can see a short summary of your blog post before clicking into it to read it in detail. So get those creative juices flowing and share your blogging talent with the world!
+Welcome to BlogSmart! You can use this application to read all kinds of blogs posted by others and share your own. You can write blogs, upload pictures, and share it with your friends. Not only that, we also have an AI tool which will summarize your blog post for you so that your audience can see a short summary of your blog post before clicking into it to read it in detail. So get those creative juices flowing and share your blogging talent with the world!
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
+
 - **Category:** Productivity/Blog Sharing/Creative writing
 - **Mobile:** This app would be primarily developed for mobile.
 - **Story:** Users can read other users' blogs, upload their own blogs, and optionally categorize blogs. AI enhances with summaries.
@@ -23,6 +23,8 @@ Welcome to BlogShare! You can use this application to read all kinds of blogs po
 - **Scope:** Users can read and write blogs. The app is enhanced using AI for summarization. Optionally we also have the feature to categorize blogs and use the AI to suggest writing topics.
 
 ## Product Spec
+
+### App color Theme: Orange & White
 
 ### 1. User Stories (Required and Optional)
 
@@ -83,12 +85,14 @@ Optional:
 * [optional] Settings -> Toggle settings
 
 ## Wireframes
-![IMG_8867](https://user-images.githubusercontent.com/18317412/231049096-c544ca1c-7d66-44bf-a64a-417c37d7e3af.jpg)
-![IMG_8866](https://user-images.githubusercontent.com/18317412/231049109-932e6267-92ae-48bc-8a23-f4428249b01c.jpg)
+The Wireframes say "BlogShare" as the app name because we weren't sure of the final name of the app when designing the wireframes.
 
+<img src="https://i.imgur.com/2RwxxEk.jpg" width=700>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img width="592" alt="Screenshot 2023-04-10 at 10 31 04 PM" src="https://user-images.githubusercontent.com/18317412/231049150-79ef0170-599c-4103-89cc-df26ebe4dba1.png">
+<img src="https://i.imgur.com/c9RSNrL.png" width=700>
+<img src="https://i.imgur.com/WyAoGg2.png" width=700>
+
 
 ### [BONUS] Interactive Prototype
 
@@ -101,4 +105,3 @@ Optional:
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
     - GPT-3 model from OpenAI, https://platform.openai.com/docs/libraries
-
