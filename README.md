@@ -83,10 +83,12 @@ Optional:
 * [optional] Settings -> Toggle settings
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![IMG_8867](https://user-images.githubusercontent.com/18317412/231049096-c544ca1c-7d66-44bf-a64a-417c37d7e3af.jpg)
+![IMG_8866](https://user-images.githubusercontent.com/18317412/231049109-932e6267-92ae-48bc-8a23-f4428249b01c.jpg)
+
 
 ### [BONUS] Digital Wireframes & Mockups
+<img width="592" alt="Screenshot 2023-04-10 at 10 31 04 PM" src="https://user-images.githubusercontent.com/18317412/231049150-79ef0170-599c-4103-89cc-df26ebe4dba1.png">
 
 ### [BONUS] Interactive Prototype
 
@@ -99,4 +101,4 @@ Optional:
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
     - GPT-3 model from OpenAI, https://platform.openai.com/docs/libraries
-    - 
+
