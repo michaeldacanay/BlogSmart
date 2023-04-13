@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                               clientKey: "ienfPnKOFY7fHcaG4anVvys3qGIcwaPnlQbIVl0W",
                               serverURL: URL(string: "https://parseapi.back4app.com")!)
         
-        //Test code to check if Parse is working fine
+        /*Test code to check if Parse is working fine
         var score = GameScore(playerName: "ChrisEvans", points: 398)
         
         // Save to your server asynchronously (preferred way) - Performs work on background queue and returns to specified callbackQueue.
@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 assertionFailure("Error saving: \(error)")
             }
         }
+         */
         
         return true
     }
@@ -54,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// Test Code
+/* Test Code
  
 // Create your own value type 'ParseObject'.
 struct GameScore: ParseObject {
@@ -84,4 +85,4 @@ extension GameScore {
 // Sample Usage
 //
 // let score = GameScore(playerName: "Kingsley", points: 13)
-//
+*/
