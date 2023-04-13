@@ -1,5 +1,6 @@
-Original App Design Project - README Template
+Original App Design Project
 ===
+
 
 # BlogSmart
 
