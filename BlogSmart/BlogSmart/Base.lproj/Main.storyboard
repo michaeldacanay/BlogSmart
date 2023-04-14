@@ -43,7 +43,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8eU-aH-Q5Q">
-                                <rect key="frame" x="0.0" y="147" width="393" height="622"/>
+                                <rect key="frame" x="0.0" y="147" width="393" height="573"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="252" id="mjm-Yl-AqA">
@@ -134,12 +134,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSk-hl-N5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762.59541984732823" y="711.97183098591552"/>
+            <point key="canvasLocation" x="1689.3129770992366" y="711.97183098591552"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Write View Controller-->
+        <scene sceneID="e09-R1-qod">
+            <objects>
+                <viewController id="XNQ-Xp-qBI" userLabel="Write View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sp5-OV-G2T">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Gu7-Cj-L4R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BlogSmart" id="yIe-bZ-kcf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOx-mz-Wgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3457.2519083969464" y="711.97183098591552"/>
+        </scene>
+        <!--Read-->
         <scene sceneID="7CQ-qv-80M">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O6n-RH-BgU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Read" image="book" catalog="system" id="Sjw-pF-duR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K0F-4B-Twd">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -156,11 +173,54 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNx-uw-u8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164.12213740458014" y="712.67605633802816"/>
+            <point key="canvasLocation" x="762.59541984732823" y="711.97183098591552"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ujz-bb-2M6">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ad5-Fs-eO3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UCF-bz-kZA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="O6n-RH-BgU" kind="relationship" relationship="viewControllers" id="8Ud-EJ-PIP"/>
+                        <segue destination="xTK-XA-rEQ" kind="relationship" relationship="viewControllers" id="0qV-3g-CpH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKh-UO-EOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164.12213740458014" y="711.97183098591552"/>
+        </scene>
+        <!--Write-->
+        <scene sceneID="5HP-5r-ExM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xTK-XA-rEQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Write" image="highlighter" catalog="system" id="FPF-5q-T9c"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FVC-mZ-Rcm">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="34"/>
+                            <color key="textColor" red="0.86260194690000003" green="0.55305580330000004" blue="0.19676201569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XNQ-Xp-qBI" kind="relationship" relationship="rootViewController" id="VEc-fu-w0b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vn-uN-foa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2530.5343511450383" y="711.97183098591552"/>
         </scene>
     </scenes>
     <resources>
-        <image name="BlogIT default image" width="1024" height="1024"/>
+        <image name="BlogIT default image" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="highlighter" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
