@@ -34,6 +34,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4G-Uv-ELs">
                                                 <rect key="frame" x="0.0" y="74.666666666666686" width="361" height="40"/>
+                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="JfL-0Q-Q3E"/>
                                                     <constraint firstAttribute="width" constant="361" id="c22-nM-u6a"/>
@@ -43,6 +44,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaP-cT-9Au">
                                                 <rect key="frame" x="0.0" y="130.66666666666669" width="361" height="40"/>
+                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="361" id="FPR-Mo-IzD"/>
                                                     <constraint firstAttribute="height" constant="40" id="PWK-mB-tFo"/>
@@ -308,6 +310,9 @@
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="highlighter" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
