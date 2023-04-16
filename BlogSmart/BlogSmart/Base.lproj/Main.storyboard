@@ -174,6 +174,9 @@
                                                 <constraint firstItem="mJc-oy-y6X" firstAttribute="top" secondItem="3UO-qa-6I4" secondAttribute="top" constant="16" id="wc4-JB-UxB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="MvT-wf-YxC" kind="show" id="4yr-Gn-C2j"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -205,6 +208,80 @@
             </objects>
             <point key="canvasLocation" x="1689.3129770992366" y="711.97183098591552"/>
         </scene>
+        <!--Read Detail View Controller-->
+        <scene sceneID="Eeh-QJ-IwB">
+            <objects>
+                <viewController id="MvT-wf-YxC" userLabel="Read Detail View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vdr-ya-kb9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OJ7-Z2-GfJ">
+                                <rect key="frame" x="116.66666666666669" y="123.00000000000001" width="160" height="247.33333333333337"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlogIT default image" translatesAutoresizingMaskIntoConstraints="NO" id="95D-CD-cy9">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="bKQ-5a-aHR"/>
+                                            <constraint firstAttribute="height" constant="160" id="zNe-Fw-Oo7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qep-IM-f4m" userLabel="Title">
+                                        <rect key="frame" x="50.999999999999986" y="160" width="57.666666666666671" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="p4t-8H-whJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" red="0.86260194690000003" green="0.55305580330000004" blue="0.19676201569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date posted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjp-yU-NHN">
+                                        <rect key="frame" x="33.333333333333329" y="227" width="93" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eWM-P9-kA1">
+                                <rect key="frame" x="20" y="390.33333333333331" width="353" height="109"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-Hb-RE0">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="19.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAL-Oh-pQf">
+                                        <rect key="frame" x="0.0" y="27.666666666666679" width="353" height="81.333333333333314"/>
+                                        <string key="text">This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZAL-Oh-pQf" firstAttribute="centerX" secondItem="eWM-P9-kA1" secondAttribute="centerX" id="xOc-Bv-ROe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kuc-u2-aQh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kuc-u2-aQh" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eWM-P9-kA1" secondAttribute="bottom" constant="20" id="1dN-Jx-3oF"/>
+                            <constraint firstItem="OJ7-Z2-GfJ" firstAttribute="centerX" secondItem="Vdr-ya-kb9" secondAttribute="centerX" id="3bZ-Zl-LE8"/>
+                            <constraint firstItem="eWM-P9-kA1" firstAttribute="leading" secondItem="Kuc-u2-aQh" secondAttribute="leading" constant="20" id="Kg6-jb-9nW"/>
+                            <constraint firstItem="eWM-P9-kA1" firstAttribute="top" secondItem="OJ7-Z2-GfJ" secondAttribute="bottom" constant="20" id="O8Y-tD-cUn"/>
+                            <constraint firstItem="OJ7-Z2-GfJ" firstAttribute="top" secondItem="Kuc-u2-aQh" secondAttribute="top" constant="20" id="eFa-bL-gqL"/>
+                            <constraint firstAttribute="trailing" secondItem="eWM-P9-kA1" secondAttribute="trailing" constant="20" id="xAb-7e-k7e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="BlogSmart" id="gaV-pO-J0P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsq-3W-ICZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687.7862595419847" y="1453.5211267605634"/>
+        </scene>
         <!--Write View Controller-->
         <scene sceneID="e09-R1-qod">
             <objects>
@@ -219,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOx-mz-Wgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3457.2519083969464" y="711.97183098591552"/>
+            <point key="canvasLocation" x="3465" y="712"/>
         </scene>
         <!--Read-->
         <scene sceneID="7CQ-qv-80M">
