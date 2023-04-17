@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27AC8B729EC31450011E378 /* SignUpViewController.swift */; };
 		AF202F0929E889E600D18F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0829E889E600D18F2C /* AppDelegate.swift */; };
 		AF202F0B29E889E600D18F2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0A29E889E600D18F2C /* SceneDelegate.swift */; };
 		AF202F0D29E889E600D18F2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0C29E889E600D18F2C /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A27AC8B729EC31450011E378 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AF202F0529E889E600D18F2C /* BlogSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF202F0829E889E600D18F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF202F0A29E889E600D18F2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				AF202F0C29E889E600D18F2C /* ViewController.swift */,
 				AF202F0E29E889E600D18F2C /* Main.storyboard */,
 				BA1BA4F029EA503A00E13CDC /* LoginViewController.swift */,
+				A27AC8B729EC31450011E378 /* SignUpViewController.swift */,
 				AF202F1129E889E800D18F2C /* Assets.xcassets */,
 				AF202F1329E889E800D18F2C /* LaunchScreen.storyboard */,
 				AF202F1629E889E800D18F2C /* Info.plist */,
@@ -184,6 +187,7 @@
 			files = (
 				BA1BA4F129EA503A00E13CDC /* LoginViewController.swift in Sources */,
 				AF202F0D29E889E600D18F2C /* ViewController.swift in Sources */,
+				A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */,
 				BA1BA4F929EA57F200E13CDC /* DateFormatter+Extensions.swift in Sources */,
 				AF202F0929E889E600D18F2C /* AppDelegate.swift in Sources */,
 				BA1BA4F429EA534100E13CDC /* User.swift in Sources */,
@@ -335,6 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC42G26957;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BlogSmart/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Hi there! Looks like you want to upload a picture. In order to do that, you will need to grant access to this app to use photos from your photo library. Please grant access below.";
@@ -364,6 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AC42G26957;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BlogSmart/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Hi there! Looks like you want to upload a picture. In order to do that, you will need to grant access to this app to use photos from your photo library. Please grant access below.";
