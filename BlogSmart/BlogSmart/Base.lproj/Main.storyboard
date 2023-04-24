@@ -71,6 +71,9 @@
                                                 <rect key="frame" x="0.0" y="34.333333333333371" width="361" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                                <connections>
+                                                    <segue destination="eq8-hX-bo0" kind="show" id="uiH-XP-Wb8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -164,6 +167,7 @@
                         <viewLayoutGuide key="safeArea" id="ATa-iL-UvE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1qD-wH-rD2"/>
                     <connections>
                         <outlet property="emailField" destination="JNg-6F-lsj" id="Az7-Rm-IVH"/>
                         <outlet property="passwordField" destination="eWg-BU-72W" id="18b-AN-0Na"/>
