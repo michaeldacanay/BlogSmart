@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22881DF29F5FEF3007F48B9 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A22881DE29F5FEF3007F48B9 /* OpenAIKit */; };
 		A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27AC8B729EC31450011E378 /* SignUpViewController.swift */; };
 		AF202F0929E889E600D18F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0829E889E600D18F2C /* AppDelegate.swift */; };
 		AF202F0B29E889E600D18F2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0A29E889E600D18F2C /* SceneDelegate.swift */; };
@@ -45,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF202F2129E88A2E00D18F2C /* ParseSwift in Frameworks */,
+				A22881DF29F5FEF3007F48B9 /* OpenAIKit in Frameworks */,
 				AF202F1E29E88A1700D18F2C /* Alamofire in Frameworks */,
 				AF202F2429E88A4A00D18F2C /* AlamofireImage in Frameworks */,
 			);
@@ -124,6 +126,7 @@
 				AF202F1D29E88A1700D18F2C /* Alamofire */,
 				AF202F2029E88A2E00D18F2C /* ParseSwift */,
 				AF202F2329E88A4A00D18F2C /* AlamofireImage */,
+				A22881DE29F5FEF3007F48B9 /* OpenAIKit */,
 			);
 			productName = BlogSmart;
 			productReference = AF202F0529E889E600D18F2C /* BlogSmart.app */;
@@ -157,6 +160,7 @@
 				AF202F1C29E88A1700D18F2C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AF202F1F29E88A2E00D18F2C /* XCRemoteSwiftPackageReference "Parse-Swift" */,
 				AF202F2229E88A4A00D18F2C /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				A22881DD29F5FEF3007F48B9 /* XCRemoteSwiftPackageReference "openai-kit" */,
 			);
 			productRefGroup = AF202F0629E889E600D18F2C /* Products */;
 			projectDirPath = "";
@@ -416,6 +420,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A22881DD29F5FEF3007F48B9 /* XCRemoteSwiftPackageReference "openai-kit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dylanshine/openai-kit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		AF202F1C29E88A1700D18F2C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -443,6 +455,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A22881DE29F5FEF3007F48B9 /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A22881DD29F5FEF3007F48B9 /* XCRemoteSwiftPackageReference "openai-kit" */;
+			productName = OpenAIKit;
+		};
 		AF202F1D29E88A1700D18F2C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AF202F1C29E88A1700D18F2C /* XCRemoteSwiftPackageReference "Alamofire" */;
