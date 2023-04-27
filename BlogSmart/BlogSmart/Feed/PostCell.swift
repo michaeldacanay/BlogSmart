@@ -38,6 +38,7 @@ class PostCell: UITableViewCell {
         }
         
         blogTitle.text = post.title ?? "New Blog"
+        // TODO: Use OpenAI API call to generate blog summary
         blogSummary.text = "Temporary hold for now. Will replace will openAI API call to generate a summary"
         
         if let date = post.createdAt {
