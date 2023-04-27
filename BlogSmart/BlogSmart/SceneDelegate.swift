@@ -28,11 +28,43 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         NotificationCenter.default.addObserver(forName: Notification.Name("login"), object: nil, queue: OperationQueue.main) { [weak self] _ in
             self?.login()
         }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name("logout"), object: nil, queue: OperationQueue.main) { [weak self] _ in
+            self?.logOut()
+        }
+
+        // Check for cached user for persisted log in.
+        if User.current != nil {
+            login()
+        }
     }
     
     private func login() {
         let storyboard = UIStoryboard(name: Constants.storyboardIdentifier, bundle: nil)
         self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.readNavigationControllerIdentifier)
+    }
+    
+    private func logOut() {
+        User.logout { [weak self] result in
+            switch result {
+            case .success:
+                
+                // Make sure UI updates are done on main thread when initiated from background thread.
+                DispatchQueue.main.async {
+                    
+                    // Instantiate the storyboard that contains the destination view controller
+                    let storyboard = UIStoryboard(name: Constants.storyboardIdentifier, bundle: nil)
+                    
+                    // Instantiate the destination view controller
+                    let viewController = storyboard.instantiateViewController(withIdentifier: Constants.loginNavigationControllerIdentifier)
+                    
+                    // Programatically set the current displayed view controller
+                    self?.window?.rootViewController = viewController
+                }
+            case .failure(let error):
+                print("❌ Log out error: \(error)")
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

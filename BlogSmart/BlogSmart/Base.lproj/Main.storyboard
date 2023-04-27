@@ -190,7 +190,7 @@
         <!--Read View Controller-->
         <scene sceneID="iFQ-te-6CH">
             <objects>
-                <viewController id="KjX-4B-1cd" userLabel="Read View Controller" sceneMemberID="viewController">
+                <viewController id="KjX-4B-1cd" userLabel="Read View Controller" customClass="FeedViewController" customModule="BlogSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aye-WT-jkU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
                                 <rect key="frame" x="0.0" y="147" width="393" height="573"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="252" id="mjm-Yl-AqA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="252" id="mjm-Yl-AqA" customClass="PostCell" customModule="BlogSmart" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="252"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mjm-Yl-AqA" id="3UO-qa-6I4">
@@ -271,6 +271,12 @@
                                                 <constraint firstItem="mJc-oy-y6X" firstAttribute="top" secondItem="3UO-qa-6I4" secondAttribute="top" constant="16" id="wc4-JB-UxB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="blogDate" destination="9cT-a4-ifJ" id="AOO-MH-9E9"/>
+                                            <outlet property="blogImage" destination="afJ-4m-F8i" id="dgq-Rj-oIC"/>
+                                            <outlet property="blogSummary" destination="T2J-SM-SpK" id="dWo-1e-Syv"/>
+                                            <outlet property="blogTitle" destination="zrx-gq-EI5" id="jde-Me-tW0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -289,7 +295,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="BlogSmart" id="QxI-SS-dg5">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="WoH-Fy-z8v"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="WoH-Fy-z8v">
+                            <connections>
+                                <action selector="onLogOutDidTapped:" destination="KjX-4B-1cd" id="L1z-N7-FgN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Write" id="Ao0-8P-A1D">
                             <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
                             <imageReference key="landscapeImage" image="square.and.pencil" catalog="system" symbolScale="large"/>
