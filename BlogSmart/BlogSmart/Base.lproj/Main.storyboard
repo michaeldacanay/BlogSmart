@@ -190,7 +190,7 @@
         <!--Read View Controller-->
         <scene sceneID="iFQ-te-6CH">
             <objects>
-                <viewController id="KjX-4B-1cd" userLabel="Read View Controller" customClass="FeedViewController" customModule="BlogSmart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KjX-4B-1cd" userLabel="Read View Controller" customClass="ReadViewController" customModule="BlogSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aye-WT-jkU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,6 +310,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="blogTable" destination="8eU-aH-Q5Q" id="JmK-8k-G3B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSk-hl-N5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
