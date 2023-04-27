@@ -74,19 +74,27 @@
 		AF202F0729E889E600D18F2C /* BlogSmart */ = {
 			isa = PBXGroup;
 			children = (
+				AFA3139329FA1F42003719FE /* Login */,
 				BA1BA4F529EA56F800E13CDC /* Extensions */,
 				BA1BA4F229EA532A00E13CDC /* Models */,
 				AF202F0829E889E600D18F2C /* AppDelegate.swift */,
 				AF202F0A29E889E600D18F2C /* SceneDelegate.swift */,
 				AF202F0C29E889E600D18F2C /* ViewController.swift */,
 				AF202F0E29E889E600D18F2C /* Main.storyboard */,
-				BA1BA4F029EA503A00E13CDC /* LoginViewController.swift */,
-				A27AC8B729EC31450011E378 /* SignUpViewController.swift */,
 				AF202F1129E889E800D18F2C /* Assets.xcassets */,
 				AF202F1329E889E800D18F2C /* LaunchScreen.storyboard */,
 				AF202F1629E889E800D18F2C /* Info.plist */,
 			);
 			path = BlogSmart;
+			sourceTree = "<group>";
+		};
+		AFA3139329FA1F42003719FE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BA1BA4F029EA503A00E13CDC /* LoginViewController.swift */,
+				A27AC8B729EC31450011E378 /* SignUpViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		BA1BA4F229EA532A00E13CDC /* Models */ = {

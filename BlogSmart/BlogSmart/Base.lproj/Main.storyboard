@@ -251,6 +251,9 @@
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-SM-SpK" userLabel="Summary">
                                                                     <rect key="frame" x="0.0" y="74.000000000000014" width="219.66666666666666" height="143.33333333333337"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="143.33000000000001" id="Vnu-77-PX9"/>
+                                                                    </constraints>
                                                                     <string key="text">This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking!</string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
