@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A22881DF29F5FEF3007F48B9 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A22881DE29F5FEF3007F48B9 /* OpenAIKit */; };
+		A22881E429FB5DD2007F48B9 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22881E329FB5DD2007F48B9 /* WriteViewController.swift */; };
 		A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27AC8B729EC31450011E378 /* SignUpViewController.swift */; };
 		AF202F0929E889E600D18F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0829E889E600D18F2C /* AppDelegate.swift */; };
 		AF202F0B29E889E600D18F2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0A29E889E600D18F2C /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A22881E329FB5DD2007F48B9 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		A27AC8B729EC31450011E378 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AF202F0529E889E600D18F2C /* BlogSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF202F0829E889E600D18F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A22881E229FB5DBF007F48B9 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				A22881E329FB5DD2007F48B9 /* WriteViewController.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
 		AF202EFC29E889E600D18F2C = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		AF202F0729E889E600D18F2C /* BlogSmart */ = {
 			isa = PBXGroup;
 			children = (
+				A22881E229FB5DBF007F48B9 /* Write */,
 				AFA3139529FA2231003719FE /* Feed */,
 				AFA3139329FA1F42003719FE /* Login */,
 				BA1BA4F529EA56F800E13CDC /* Extensions */,
@@ -212,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA1BA4F129EA503A00E13CDC /* LoginViewController.swift in Sources */,
+				A22881E429FB5DD2007F48B9 /* WriteViewController.swift in Sources */,
 				AF202F0D29E889E600D18F2C /* ReadViewController.swift in Sources */,
 				A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */,
 				BA1BA4F929EA57F200E13CDC /* DateFormatter+Extensions.swift in Sources */,
