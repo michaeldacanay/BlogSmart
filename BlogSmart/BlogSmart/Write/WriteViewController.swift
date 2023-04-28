@@ -91,7 +91,7 @@ class WriteViewController: UIViewController {
         post.content = blogContent.text
         
         
-        post.summary = "TODO"
+        post.summary = "This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking! Adding another sentence to see the formatting."
 
         // Set the user as the current user
         post.user = User.current
