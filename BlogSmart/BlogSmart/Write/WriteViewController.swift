@@ -16,6 +16,26 @@ class WriteViewController: UIViewController {
     @IBOutlet weak var blogContent: UITextView!
     
     private var pickedImage: UIImage?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        
+        // Default blog image
+        blogImage.image = UIImage(named: "default_image")
+        
+        // Add border to the UI Text view
+        var borderColor = UIColor.black
+
+        blogContent.layer.borderColor = borderColor.cgColor;
+        blogContent.layer.borderWidth = 1.0;
+        blogContent.layer.cornerRadius = 5.0;
+                
+        blogTitleField.layer.borderColor = borderColor.cgColor;
+        blogTitleField.layer.borderWidth = 1.0;
+        blogTitleField.layer.cornerRadius = 5.0;
+    }
 
     
     @IBAction func onChooseImageTapped(_ sender: Any) {
@@ -119,14 +139,6 @@ class WriteViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
 }
 
 extension WriteViewController: PHPickerViewControllerDelegate {
