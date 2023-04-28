@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -321,7 +320,7 @@
         <!--Write View Controller-->
         <scene sceneID="e09-R1-qod">
             <objects>
-                <viewController id="XNQ-Xp-qBI" userLabel="Write View Controller" sceneMemberID="viewController">
+                <viewController id="XNQ-Xp-qBI" userLabel="Write View Controller" customClass="WriteViewController" customModule="BlogSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sp5-OV-G2T">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,22 +347,18 @@
                                 <rect key="frame" x="26" y="148" width="341.33333333333331" height="244"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="BlogIT default image" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-2N-M2a">
-                                        <rect key="frame" x="0.0" y="0.0" width="341.33333333333331" height="215.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="341.33333333333331" height="201.66666666666666"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waZ-gn-WTN">
-                                        <rect key="frame" x="116" y="223.66666666666669" width="109.33333333333331" height="20.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="AccentColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSz-Qa-gyV">
+                                        <rect key="frame" x="104.00000000000001" y="209.66666666666669" width="133.33333333333337" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Choose Image"/>
+                                        <connections>
+                                            <action selector="onChooseImageTapped:" destination="XNQ-Xp-qBI" eventType="touchUpInside" id="WA7-Bz-dIh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppu-s3-1IZ" userLabel="shareLabel">
-                                <rect key="frame" x="316" y="68" width="44" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="AccentColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gu7-Cj-L4R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -371,16 +366,25 @@
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="centerX" secondItem="Sp5-OV-G2T" secondAttribute="centerX" id="3UR-DY-vvD"/>
                             <constraint firstItem="Gu7-Cj-L4R" firstAttribute="bottom" secondItem="Wgq-Hg-7xo" secondAttribute="bottom" constant="10" id="L6m-70-HVt"/>
                             <constraint firstItem="1G7-nn-aEe" firstAttribute="top" secondItem="Gu7-Cj-L4R" secondAttribute="top" constant="45" id="W2h-tn-Wvb"/>
-                            <constraint firstAttribute="trailing" secondItem="ppu-s3-1IZ" secondAttribute="trailing" constant="33" id="dOn-eX-t8T"/>
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="leading" secondItem="Gu7-Cj-L4R" secondAttribute="leading" constant="30" id="dnI-2d-1zV"/>
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="centerY" secondItem="Sp5-OV-G2T" secondAttribute="centerY" constant="145" id="i75-h1-172"/>
-                            <constraint firstItem="ppu-s3-1IZ" firstAttribute="top" secondItem="Sp5-OV-G2T" secondAttribute="top" constant="68" id="jQp-bI-yWR"/>
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="top" secondItem="1G7-nn-aEe" secondAttribute="bottom" constant="40" id="kdC-bw-gOa"/>
                             <constraint firstItem="1G7-nn-aEe" firstAttribute="centerX" secondItem="Sp5-OV-G2T" secondAttribute="centerX" id="llY-Hz-Scx"/>
                             <constraint firstItem="Gu7-Cj-L4R" firstAttribute="trailing" secondItem="Wgq-Hg-7xo" secondAttribute="trailing" constant="30" id="vHk-mv-yeG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BlogSmart" id="yIe-bZ-kcf"/>
+                    <navigationItem key="navigationItem" title="BlogSmart" id="yIe-bZ-kcf">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="yif-Qz-8oP">
+                            <connections>
+                                <action selector="onPostTapped:" destination="XNQ-Xp-qBI" id="Qr1-Bk-Ly2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="blogContent" destination="79d-Yr-DqP" id="pLs-4P-Dx3"/>
+                        <outlet property="blogImage" destination="Gcg-2N-M2a" id="9T8-j9-AWD"/>
+                        <outlet property="blogTitleField" destination="noQ-kN-KU7" id="njP-1q-1iq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOx-mz-Wgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -478,9 +482,6 @@
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="highlighter" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="quaternaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

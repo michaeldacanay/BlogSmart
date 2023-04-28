@@ -32,6 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         NotificationCenter.default.addObserver(forName: Notification.Name("logout"), object: nil, queue: OperationQueue.main) { [weak self] _ in
             self?.logOut()
         }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name("Go back to the initial screen"), object: nil, queue: OperationQueue.main) { [weak self] _ in
+            self?.completePost()
+        }
 
         // Check for cached user for persisted log in.
         if User.current != nil {
@@ -65,6 +69,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 print("❌ Log out error: \(error)")
             }
         }
+    }
+    
+    private func completePost() {
+        let storyboard = UIStoryboard(name: Constants.storyboardIdentifier, bundle: nil)
+        self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.readNavigationControllerIdentifier)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
