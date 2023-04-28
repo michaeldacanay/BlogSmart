@@ -8,6 +8,10 @@
 import Foundation
 import ParseSwift
 
+//struct GPTResponse: Decodable {
+//    let result: 
+//}
+
 struct Post: ParseObject {
     
     // Required by the protocol

@@ -23,15 +23,34 @@ class WriteViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Create a URL for the request
         // In this case, the custom search URL you created in in part 1
-        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
+//        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
+        let apiKey = "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"
+        let endpoint = "https://api.openai.com/v1/chat/completions"
+        
+        let headers = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(apiKey)"
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: endpoint)! as URL)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+
+        let json: [String: Any] = [
+            "model": "gpt-3.5-turbo",
+            "messages": [["role": "user", "content": "Say this is a test!"]],
+            "temperature": 0.7
+        ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
         // Use the URL to instantiate a request
-        let request = URLRequest(url: url)
+//        let request = URLRequest(url: url)
+        request.httpBody = jsonData
 
         // Create a URLSession using a shared instance and call its dataTask method
         // The data task method attempts to retrieve the contents of a URL based on the specified URL.
         // When finished, it calls it's completion handler (closure) passing in optional values for data (the data we want to fetch), response (info about the response like status code) and error (if the request was unsuccessful)
-        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
 
             // Handle any errors
             if let error = error {
@@ -49,10 +68,21 @@ class WriteViewController: UIViewController {
             do {
                 let jsonDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any]
                 print(jsonDictionary)
+                
+                // Create a JSON Decoder
+//                let decoder = JSONDecoder()
+//
+//                // Use the JSON decoder to try and map the data to our custom model.
+//                // TrackResponse.self is a reference to the type itself, tells the decoder what to map to.
+//                let response = try decoder.decode(GPTResponse.self, from: data)
+//
+//                // Access the array of tracks from the `results` property
+//                let tracks = response.results
+//                print("✅ \(tracks)")
             } catch {
                 print("❌ Error parsing JSON: \(error.localizedDescription)")
             }
-        }
+        })
 
         // Initiate the network request
         task.resume()
