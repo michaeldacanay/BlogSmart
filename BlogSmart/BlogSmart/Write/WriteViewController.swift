@@ -13,7 +13,7 @@ class WriteViewController: UIViewController {
     
     @IBOutlet weak var blogImage: UIImageView!
     @IBOutlet weak var blogTitleField: UITextField!
-    @IBOutlet weak var blogContent: UITextField!
+    @IBOutlet weak var blogContent: UITextView!
     
     private var pickedImage: UIImage?
 
@@ -48,18 +48,22 @@ class WriteViewController: UIViewController {
         // Dismiss Keyboard
         view.endEditing(true)
         
+        // Create Post object
+        var post = Post()
+        
+        if pickedImage == nil {
+            pickedImage = UIImage(named: "default_image")
+        }
+        
         // Unwrap optional pickedImage
         guard let image = pickedImage,
               // Create and compress image data (jpeg) from UIImage
               let imageData = image.jpegData(compressionQuality: 0.1) else {
             return
         }
-
+        
         // Create a Parse File by providing a name and passing in the image data
         let imageFile = ParseFile(name: "image.jpg", data: imageData)
-
-        // Create Post object
-        var post = Post()
 
         // Set properties
         post.imageFile = imageFile
