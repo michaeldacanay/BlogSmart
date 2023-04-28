@@ -24,6 +24,14 @@ struct User: ParseUser {
     var password: String?
     var authData: [String: [String: String]?]?
 
-//    var lastPostedDate: Date?
+    // Custom properties.
+    var lastPostedDate: Date?
+}
 
+extension User {
+    init(username: String, email: String, password: String) {
+        self.username = username
+        self.email = email
+        self.password = password
+    }
 }
