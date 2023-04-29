@@ -8,6 +8,7 @@
 import Foundation
 import ParseSwift
 
+
 struct Post: ParseObject {
     
     // Required by the protocol

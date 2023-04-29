@@ -17,16 +17,16 @@ class WriteViewController: UIViewController {
     
     private var pickedImage: UIImage?
     
+    private var gptResponse: GPTResponse?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         // Default blog image
         blogImage.image = UIImage(named: "default_image")
         
         // Add border to the UI Text view
-        var borderColor = UIColor.black
+        let borderColor = UIColor.black
 
         blogContent.layer.borderColor = borderColor.cgColor;
         blogContent.layer.borderWidth = 1.0;
@@ -90,54 +90,143 @@ class WriteViewController: UIViewController {
         post.title = blogTitleField.text
         post.content = blogContent.text
         
+        // ############################################################
+        // Load API key
+        guard let keysFileUrl = Bundle.main.url(forResource: "Keys", withExtension: "plist") else {
+            fatalError("Couldn't find Keys.plist in the app bundle.")
+        }
+        guard let keysData = try? Data(contentsOf: keysFileUrl) else {
+            fatalError("Couldn't read data from Keys.plist.")
+        }
+        guard let keys = try? PropertyListSerialization.propertyList(from: keysData, options: [], format: nil) as? [String: Any] else {
+            fatalError("Couldn't parse Keys.plist.")
+        }
+        guard let apiKey = keys["OPENAI_API_KEY"] as? String else {
+            fatalError("Couldn't find OPENAI_API_KEY in Keys.plist.")
+        }
         
-        post.summary = "This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking! Adding another sentence to see the formatting."
+        
+        // Create a URL for the request
+        // In this case, the custom search URL you created in in part 1
+        let endpoint = "https://api.openai.com/v1/chat/completions"
+        
+        let headers = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(apiKey)"
+        ]
 
-        // Set the user as the current user
-        post.user = User.current
+        let request = NSMutableURLRequest(url: NSURL(string: endpoint)! as URL)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
 
-        // Save post (async)
-        post.save { [weak self] result in
+        let json: [String: Any] = [
+            "model": "gpt-3.5-turbo",
+            "messages": [["role": "user", "content": "\(String(describing: blogContent.text)). \nSummarize this in a 3 sentence paragraph."]],
+            "temperature": 0.7
+        ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
-            // Switch to the main thread for any UI updates
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let post):
-                    print("✅ Post Saved! \(post)")
+        // Use the URL to instantiate a request
+        request.httpBody = jsonData
+        
+        // loading icon
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .orange
+        view.addSubview(activityIndicator)
+        
+        // Start animating the activity indicator before the network request starts.
+        activityIndicator.startAnimating()
 
-                    // TODO: Pt 2 - Update user's last posted date
-                    // Get the current user
-                    if var currentUser = User.current {
+        // Create a URLSession using a shared instance and call its dataTask method
+        // The data task method attempts to retrieve the contents of a URL based on the specified URL asynchronously.
+        // When finished, it calls it's completion handler (closure) passing in optional values for data (the data we want to fetch), response (info about the response like status code) and error (if the request was unsuccessful)
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
 
-                        // Update the `lastPostedDate` property on the user with the current date.
-                        currentUser.lastPostedDate = Date()
+            // Handle any errors
+            if let error = error {
+                print("❌ Network error: \(error.localizedDescription)")
+            }
 
-                        // Save updates to the user (async)
-                        currentUser.save { [weak self] result in
-                            switch result {
-                            case .success(let user):
-                                print("✅ User Saved! \(user)")
+            // Make sure we have data
+            guard let data = data else {
+                print("❌ Data is nil")
+                return
+            }
 
-                                // Switch to the main thread for any UI updates
-                                DispatchQueue.main.async {
-                                    // Return to previous view controller
-                                    self?.navigationController?.popViewController(animated: true)
-                                    
-                                    NotificationCenter.default.post(name: Notification.Name("Go back to the initial screen"), object: nil)
-                                    
+            // The `JSONSerialization.jsonObject(with: data)` method is a "throwing" function (meaning it can throw an error) so we wrap it in a `do` `catch`
+            // We cast the resultant returned object to a dictionary with a `String` key, `Any` value pair.
+            do {
+                let _ = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+                
+                // Create a JSON Decoder
+                let decoder = JSONDecoder()
+
+                // Use the JSON decoder to try and map the data to our custom model.
+                // GPTResponse.self is a reference to the type itself, tells the decoder what to map to.
+                let response = try decoder.decode(GPTResponse.self, from: data)
+
+                // Access the array of tracks from the `results` property
+                print("✅ \(response.choices[0].message.content)")
+                post.summary = response.choices[0].message.content
+                
+                // Set the user as the current user
+                post.user = User.current
+
+                // Save post (async)
+                post.save { [weak self] result in
+
+                    // Switch to the main thread for any UI updates
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let post):
+                            print("✅ Post Saved! \(post)")
+
+                            // Get the current user
+                            if var currentUser = User.current {
+
+                                // Update the `lastPostedDate` property on the user with the current date.
+                                currentUser.lastPostedDate = Date()
+
+                                // Save updates to the user (async)
+                                currentUser.save { [weak self] result in
+                                    switch result {
+                                    case .success(let user):
+                                        print("✅ User Saved! \(user)")
+
+                                        // Switch to the main thread for any UI updates
+                                        DispatchQueue.main.async {
+                                            activityIndicator.stopAnimating()
+                                            
+                                            // Return to previous view controller
+                                            self?.navigationController?.popViewController(animated: true)
+                                            
+                                            NotificationCenter.default.post(name: Notification.Name("Go back to the initial screen"), object: nil)
+                                        }
+
+                                    case .failure(let error):
+                                        self?.showAlert(description: error.localizedDescription)
+                                    }
                                 }
-
-                            case .failure(let error):
-                                self?.showAlert(description: error.localizedDescription)
                             }
+
+                        case .failure(let error):
+                            self?.showAlert(description: error.localizedDescription)
                         }
                     }
-
-                case .failure(let error):
-                    self?.showAlert(description: error.localizedDescription)
                 }
+                
+            } catch {
+                print("❌ Error parsing JSON: \(error.localizedDescription)")
             }
-        }
+        })
+
+        // Initiate the network request
+        task.resume()
+        // ############################################################
+
     }
 }
 

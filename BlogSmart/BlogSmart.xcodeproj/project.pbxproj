@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A22881DF29F5FEF3007F48B9 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A22881DE29F5FEF3007F48B9 /* OpenAIKit */; };
 		A22881E429FB5DD2007F48B9 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22881E329FB5DD2007F48B9 /* WriteViewController.swift */; };
+		A22881EA29FCC824007F48B9 /* GPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22881E929FCC824007F48B9 /* GPTResponse.swift */; };
+		A22881EC29FCD089007F48B9 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22881EB29FCD089007F48B9 /* Keys.plist */; };
 		A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27AC8B729EC31450011E378 /* SignUpViewController.swift */; };
 		AF202F0929E889E600D18F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0829E889E600D18F2C /* AppDelegate.swift */; };
 		AF202F0B29E889E600D18F2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0A29E889E600D18F2C /* SceneDelegate.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		A22881E329FB5DD2007F48B9 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		A22881E929FCC824007F48B9 /* GPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponse.swift; sourceTree = "<group>"; };
+		A22881EB29FCD089007F48B9 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		A27AC8B729EC31450011E378 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AF202F0529E889E600D18F2C /* BlogSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF202F0829E889E600D18F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				AF202F1129E889E800D18F2C /* Assets.xcassets */,
 				AF202F1329E889E800D18F2C /* LaunchScreen.storyboard */,
 				AF202F1629E889E800D18F2C /* Info.plist */,
+				A22881EB29FCD089007F48B9 /* Keys.plist */,
 			);
 			path = BlogSmart;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			children = (
 				BA1BA4F329EA534100E13CDC /* User.swift */,
 				AFA3139829FA2A5B003719FE /* Post.swift */,
+				A22881E929FCC824007F48B9 /* GPTResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22881EC29FCD089007F48B9 /* Keys.plist in Resources */,
 				AF202F1529E889E800D18F2C /* LaunchScreen.storyboard in Resources */,
 				AF202F1229E889E800D18F2C /* Assets.xcassets in Resources */,
 				AF202F1029E889E600D18F2C /* Main.storyboard in Resources */,
@@ -224,6 +231,7 @@
 			files = (
 				BA1BA4F129EA503A00E13CDC /* LoginViewController.swift in Sources */,
 				A22881E429FB5DD2007F48B9 /* WriteViewController.swift in Sources */,
+				A22881EA29FCC824007F48B9 /* GPTResponse.swift in Sources */,
 				AF202F0D29E889E600D18F2C /* ReadViewController.swift in Sources */,
 				A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */,
 				BA1BA4F929EA57F200E13CDC /* DateFormatter+Extensions.swift in Sources */,
