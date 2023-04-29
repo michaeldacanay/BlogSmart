@@ -105,9 +105,10 @@ class WriteViewController: UIViewController {
             fatalError("Couldn't find OPENAI_API_KEY in Keys.plist.")
         }
         
+        
         // Create a URL for the request
         // In this case, the custom search URL you created in in part 1
-//        let apiKey = "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"
+//        let apiKey = "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"
         let endpoint = "https://api.openai.com/v1/chat/completions"
         
         let headers = [
@@ -129,10 +130,21 @@ class WriteViewController: UIViewController {
         // Use the URL to instantiate a request
 //        let request = URLRequest(url: url)
         request.httpBody = jsonData
+        
+        // loading icon
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .orange
+        view.addSubview(activityIndicator)
+        
+        // Start animating the activity indicator before the network request starts.
+        activityIndicator.startAnimating()
 
         // Create a URLSession using a shared instance and call its dataTask method
         // The data task method attempts to retrieve the contents of a URL based on the specified URL.
         // When finished, it calls it's completion handler (closure) passing in optional values for data (the data we want to fetch), response (info about the response like status code) and error (if the request was unsuccessful)
+        
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
 
             // Handle any errors
@@ -150,7 +162,7 @@ class WriteViewController: UIViewController {
             // We cast the resultant returned object to a dictionary with a `String` key, `Any` value pair.
             do {
                 let jsonDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any]
-//                print(jsonDictionary)
+                print(jsonDictionary)
                 
                 // Create a JSON Decoder
                 let decoder = JSONDecoder()
@@ -191,6 +203,8 @@ class WriteViewController: UIViewController {
 
                                         // Switch to the main thread for any UI updates
                                         DispatchQueue.main.async {
+                                            activityIndicator.stopAnimating()
+                                            
                                             // Return to previous view controller
                                             self?.navigationController?.popViewController(animated: true)
                                             
