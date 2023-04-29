@@ -226,8 +226,6 @@ class WriteViewController: UIViewController {
         // Initiate the network request
         task.resume()
         // ############################################################
-        
-//        post.summary = "This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking! Adding another sentence to see the formatting."
 
     }
 }
