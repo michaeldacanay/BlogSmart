@@ -108,7 +108,6 @@ class WriteViewController: UIViewController {
         
         // Create a URL for the request
         // In this case, the custom search URL you created in in part 1
-//        let apiKey = "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"
         let endpoint = "https://api.openai.com/v1/chat/completions"
         
         let headers = [
@@ -128,7 +127,6 @@ class WriteViewController: UIViewController {
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
         // Use the URL to instantiate a request
-//        let request = URLRequest(url: url)
         request.httpBody = jsonData
         
         // loading icon
@@ -142,7 +140,7 @@ class WriteViewController: UIViewController {
         activityIndicator.startAnimating()
 
         // Create a URLSession using a shared instance and call its dataTask method
-        // The data task method attempts to retrieve the contents of a URL based on the specified URL.
+        // The data task method attempts to retrieve the contents of a URL based on the specified URL asynchronously.
         // When finished, it calls it's completion handler (closure) passing in optional values for data (the data we want to fetch), response (info about the response like status code) and error (if the request was unsuccessful)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
@@ -161,18 +159,16 @@ class WriteViewController: UIViewController {
             // The `JSONSerialization.jsonObject(with: data)` method is a "throwing" function (meaning it can throw an error) so we wrap it in a `do` `catch`
             // We cast the resultant returned object to a dictionary with a `String` key, `Any` value pair.
             do {
-                let jsonDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any]
-                print(jsonDictionary)
+                let _ = try JSONSerialization.jsonObject(with: data) as? [String: Any]
                 
                 // Create a JSON Decoder
                 let decoder = JSONDecoder()
 
                 // Use the JSON decoder to try and map the data to our custom model.
-                // TrackResponse.self is a reference to the type itself, tells the decoder what to map to.
+                // GPTResponse.self is a reference to the type itself, tells the decoder what to map to.
                 let response = try decoder.decode(GPTResponse.self, from: data)
 
                 // Access the array of tracks from the `results` property
-//                let tracks = response.results
                 print("✅ \(response.choices[0].message.content)")
                 post.summary = response.choices[0].message.content
                 
@@ -188,7 +184,6 @@ class WriteViewController: UIViewController {
                         case .success(let post):
                             print("✅ Post Saved! \(post)")
 
-                            // TODO: Pt 2 - Update user's last posted date
                             // Get the current user
                             if var currentUser = User.current {
 
@@ -209,7 +204,6 @@ class WriteViewController: UIViewController {
                                             self?.navigationController?.popViewController(animated: true)
                                             
                                             NotificationCenter.default.post(name: Notification.Name("Go back to the initial screen"), object: nil)
-                                            
                                         }
 
                                     case .failure(let error):
