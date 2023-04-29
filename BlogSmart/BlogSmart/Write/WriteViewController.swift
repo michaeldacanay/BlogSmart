@@ -13,9 +13,29 @@ class WriteViewController: UIViewController {
     
     @IBOutlet weak var blogImage: UIImageView!
     @IBOutlet weak var blogTitleField: UITextField!
-    @IBOutlet weak var blogContent: UITextField!
+    @IBOutlet weak var blogContent: UITextView!
     
     private var pickedImage: UIImage?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        
+        // Default blog image
+        blogImage.image = UIImage(named: "default_image")
+        
+        // Add border to the UI Text view
+        var borderColor = UIColor.black
+
+        blogContent.layer.borderColor = borderColor.cgColor;
+        blogContent.layer.borderWidth = 1.0;
+        blogContent.layer.cornerRadius = 5.0;
+                
+        blogTitleField.layer.borderColor = borderColor.cgColor;
+        blogTitleField.layer.borderWidth = 1.0;
+        blogTitleField.layer.cornerRadius = 5.0;
+    }
 
     
     @IBAction func onChooseImageTapped(_ sender: Any) {
@@ -48,18 +68,22 @@ class WriteViewController: UIViewController {
         // Dismiss Keyboard
         view.endEditing(true)
         
+        // Create Post object
+        var post = Post()
+        
+        if pickedImage == nil {
+            pickedImage = UIImage(named: "default_image")
+        }
+        
         // Unwrap optional pickedImage
         guard let image = pickedImage,
               // Create and compress image data (jpeg) from UIImage
               let imageData = image.jpegData(compressionQuality: 0.1) else {
             return
         }
-
+        
         // Create a Parse File by providing a name and passing in the image data
         let imageFile = ParseFile(name: "image.jpg", data: imageData)
-
-        // Create Post object
-        var post = Post()
 
         // Set properties
         post.imageFile = imageFile
@@ -67,7 +91,7 @@ class WriteViewController: UIViewController {
         post.content = blogContent.text
         
         
-        post.summary = "TODO"
+        post.summary = "This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking! Adding another sentence to see the formatting."
 
         // Set the user as the current user
         post.user = User.current
@@ -115,14 +139,6 @@ class WriteViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
 }
 
 extension WriteViewController: PHPickerViewControllerDelegate {
