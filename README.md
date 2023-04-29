@@ -5,10 +5,14 @@ Original App Design Project
 # BlogSmart
 
 ## Table of Contents
-1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
+1. [Project Setup](#Project-Setup)
+2. [Overview](#Overview)
+2. [Product Spec](#Product-Spec)
+3. [Wireframes](#Wireframes)
+4. [Schema](#Schema)
+
+## Project Setup
+1. Create `keys.plist` in project root directory, add `OPENAI_API_KEY` (as key) with your own API key (as the value). You can request one here: https://platform.openai.com/.
 
 ## Overview
 ### Description
