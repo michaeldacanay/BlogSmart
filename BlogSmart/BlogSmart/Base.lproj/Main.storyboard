@@ -194,18 +194,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="2Sw-b5-Suv">
-                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="uKd-Ka-6nO"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="KjX-4B-1cd" id="aOH-mL-Igr"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8eU-aH-Q5Q">
-                                <rect key="frame" x="0.0" y="147" width="393" height="573"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="252" id="mjm-Yl-AqA" customClass="PostCell" customModule="BlogSmart" customModuleProvider="target">
@@ -283,12 +273,9 @@
                         <viewLayoutGuide key="safeArea" id="LdU-YR-g3m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8eU-aH-Q5Q" firstAttribute="top" secondItem="LdU-YR-g3m" secondAttribute="top" id="5yc-Xm-dCw"/>
                             <constraint firstItem="8eU-aH-Q5Q" firstAttribute="leading" secondItem="LdU-YR-g3m" secondAttribute="leading" id="Elj-wT-3Ap"/>
                             <constraint firstItem="LdU-YR-g3m" firstAttribute="bottom" secondItem="8eU-aH-Q5Q" secondAttribute="bottom" id="HZd-gk-F24"/>
-                            <constraint firstItem="2Sw-b5-Suv" firstAttribute="top" secondItem="LdU-YR-g3m" secondAttribute="top" id="V1X-Kk-J6U"/>
-                            <constraint firstItem="2Sw-b5-Suv" firstAttribute="trailing" secondItem="8eU-aH-Q5Q" secondAttribute="trailing" id="atr-Fn-Sb4"/>
-                            <constraint firstItem="2Sw-b5-Suv" firstAttribute="leading" secondItem="8eU-aH-Q5Q" secondAttribute="leading" id="awa-k3-0eM"/>
-                            <constraint firstItem="8eU-aH-Q5Q" firstAttribute="top" secondItem="2Sw-b5-Suv" secondAttribute="bottom" id="mgP-Ka-1zd"/>
                             <constraint firstItem="LdU-YR-g3m" firstAttribute="trailing" secondItem="8eU-aH-Q5Q" secondAttribute="trailing" id="qcn-2F-T9f"/>
                         </constraints>
                     </view>
