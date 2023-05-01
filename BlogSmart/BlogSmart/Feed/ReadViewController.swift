@@ -10,6 +10,10 @@ import UIKit
 class ReadViewController: UIViewController {
 
     @IBOutlet weak var blogTable: UITableView!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    private var searching = false
+    
     private let refreshControl = UIRefreshControl()
     
     private var posts = [Post]() {
@@ -19,20 +23,43 @@ class ReadViewController: UIViewController {
         }
     }
     
+    private var searchedPosts = [Post]() {
+        didSet {
+            blogTable.reloadData()
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Delegate table view roles
         blogTable.delegate = self
         blogTable.dataSource = self
-//        blogTable.allowsSelection = false
+        // blogTable.allowsSelection = false
         
         blogTable.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
+        
+        configureSearchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         queryPosts()
+    }
+    
+    // Configure search controller
+    private func configureSearchController() {
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.default
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        searchController.searchBar.placeholder = "Search by Title"
     }
     
     private func queryPosts(completion: (() -> Void)? = nil) {
@@ -84,7 +111,11 @@ class ReadViewController: UIViewController {
 
 extension ReadViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        if searching {
+            return searchedPosts.count
+        } else {
+            return posts.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,7 +123,39 @@ extension ReadViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.configure(with: posts[indexPath.row])
+        if searching {
+            cell.configure(with: searchedPosts[indexPath.row])
+        } else {
+            cell.configure(with: posts[indexPath.row])
+        }
+        
         return cell
+    }
+}
+
+extension ReadViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text!
+        
+        if !searchText.isEmpty {
+            searching = true
+            searchedPosts = []
+            for myPost in posts {
+                if let title = myPost.title, title.lowercased().contains(searchText.lowercased()) {
+                    searchedPosts.append(myPost)
+                }
+            }
+        }
+        else {
+            searching = false
+            searchedPosts = posts
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchedPosts.removeAll()
+        blogTable.reloadData()
     }
 }
