@@ -22,6 +22,7 @@
 		AF202F2429E88A4A00D18F2C /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = AF202F2329E88A4A00D18F2C /* AlamofireImage */; };
 		AFA3139729FA22B4003719FE /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3139629FA22B4003719FE /* PostCell.swift */; };
 		AFA3139929FA2A5B003719FE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3139829FA2A5B003719FE /* Post.swift */; };
+		AFAD94482A007BF900510528 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD94472A007BF900510528 /* DetailViewController.swift */; };
 		AFF89DCF29FDB31300302838 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFF89DCE29FDB31300302838 /* Keys.plist */; };
 		BA1BA4F129EA503A00E13CDC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA4F029EA503A00E13CDC /* LoginViewController.swift */; };
 		BA1BA4F429EA534100E13CDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA4F329EA534100E13CDC /* User.swift */; };
@@ -43,6 +44,7 @@
 		AF202F1629E889E800D18F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA3139629FA22B4003719FE /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		AFA3139829FA2A5B003719FE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		AFAD94472A007BF900510528 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AFF89DCE29FDB31300302838 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		BA1BA4F029EA503A00E13CDC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA1BA4F329EA534100E13CDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		AF202F0729E889E600D18F2C /* BlogSmart */ = {
 			isa = PBXGroup;
 			children = (
+				AFAD94462A007BD500510528 /* Detail */,
 				A22881E229FB5DBF007F48B9 /* Write */,
 				AFA3139529FA2231003719FE /* Feed */,
 				AFA3139329FA1F42003719FE /* Login */,
@@ -124,6 +127,14 @@
 				AFA3139629FA22B4003719FE /* PostCell.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		AFAD94462A007BD500510528 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AFAD94472A007BF900510528 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		BA1BA4F229EA532A00E13CDC /* Models */ = {
@@ -229,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFAD94482A007BF900510528 /* DetailViewController.swift in Sources */,
 				BA1BA4F129EA503A00E13CDC /* LoginViewController.swift in Sources */,
 				A22881E429FB5DD2007F48B9 /* WriteViewController.swift in Sources */,
 				A22881EA29FCC824007F48B9 /* GPTResponse.swift in Sources */,
