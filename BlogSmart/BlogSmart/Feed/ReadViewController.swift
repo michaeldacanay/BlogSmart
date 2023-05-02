@@ -48,6 +48,24 @@ class ReadViewController: UIViewController {
         queryPosts()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: Pt 1 - Pass the selected post to the detail view controller
+
+        // Get the cell that triggered the segue
+        if let cell = sender as? UITableViewCell,
+           // Get the index path of the cell from the table view
+           let indexPath = blogTable.indexPath(for: cell),
+           // Get the detail view controller
+           let detailViewController = segue.destination as? DetailViewController {
+
+            // Use the index path to get the associated post
+            let post = posts[indexPath.row]
+
+            // Set the post content on the detail view controller
+            detailViewController.post = post
+        }
+    }
+    
     // Configure search controller
     private func configureSearchController() {
         searchController.loadViewIfNeeded()
