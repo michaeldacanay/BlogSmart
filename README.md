@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Overview](#Overview)
 2. [Project Setup](#Project-Setup)
-3. [DEMO] (#Demo)
+3. [Demo] (#Demo)
 4. [Product Spec](#Product-Spec)
 5. [Wireframes](#Wireframes)
 6. [Schema](#Schema)
