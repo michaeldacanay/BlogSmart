@@ -27,10 +27,6 @@ Welcome to BlogSmart! You can use this application to read all kinds of blogs po
 3. Open the project in Xcode
 4. Create `keys.plist` in project root directory, add **`OPENAI_API_KEY`** (as key) with your own API key (as the value). You can request an API from OpenAI [here] (https://platform.openai.com/.)
 
-## Demo (Video Walkthrough)
-
-[![name](https://i.imgur.com/UCE3imo.png | width=200)](https://www.youtube.com/watch?v=nItPT-PM564)
-
 ## Product Spec
 
 ### **App color Theme:** Orange & White
@@ -108,6 +104,10 @@ The Wireframes say "BlogShare" as the app name because we weren't sure of the fi
 
 ### [BONUS] Interactive Prototype
 ![RPReplay_Final1682997091](https://user-images.githubusercontent.com/18317412/235575452-5a51e161-9f57-4499-b4e8-5c71a42e7198.gif)
+
+## Demo (Video Walkthrough)
+
+[![name](https://i.imgur.com/UCE3imo.png](https://www.youtube.com/watch?v=nItPT-PM564)
 
 ## Schema
 ** Post: **
