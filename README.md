@@ -110,16 +110,18 @@ The Wireframes say "BlogShare" as the app name because we weren't sure of the fi
 [![name](https://i.imgur.com/UCE3imo.png%7Cwidth=200)](https://www.youtube.com/watch?v=nItPT-PM564)
 
 ## Schema
-** Post: **
-    - Object ID
-    - Summary
-    - ACL
-    - user
-    - updatedAt
-    - imageFile
-    - title
-    - content
-    - createdAt
+
+**Post:**
+
+    - Object ID  
+    - Summary  
+    - ACL  
+    - user  
+    - updatedAt  
+    - imageFile  
+    - title  
+    - content  
+    - createdAt  
 
 ### Networking
 - Parse Back4App DB, https://parse-dashboard.back4app.com/apps
