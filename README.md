@@ -29,6 +29,8 @@ Welcome to BlogSmart! You can use this application to read all kinds of blogs po
 
 ## Demo (Video Walkthrough)
 
+[![name](<img src="https://i.imgur.com/UCE3imo.png" width=700>)](https://www.youtube.com/watch?v=nItPT-PM564)
+
 ## Product Spec
 
 ### **App color Theme:** Orange & White
