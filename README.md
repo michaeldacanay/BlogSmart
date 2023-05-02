@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Overview](#Overview)
 2. [Project Setup](#Project-Setup)
-3. [DEMO : Video Walkthrough] (#Demo-(Video-Walkthrough))
+3. [Demo](#Demo)
 4. [Product Spec](#Product-Spec)
 5. [Wireframes](#Wireframes)
 6. [Schema](#Schema)
@@ -26,10 +26,6 @@ Welcome to BlogSmart! You can use this application to read all kinds of blogs po
 2. Make sure you have a Mac with an updated version of XCode
 3. Open the project in Xcode
 4. Create `keys.plist` in project root directory, add **`OPENAI_API_KEY`** (as key) with your own API key (as the value). You can request an API from OpenAI [here] (https://platform.openai.com/.)
-
-## Demo (Video Walkthrough)
-
-[![name](<img src="https://i.imgur.com/UCE3imo.png" width=700>)](https://www.youtube.com/watch?v=nItPT-PM564)
 
 ## Product Spec
 
@@ -109,17 +105,23 @@ The Wireframes say "BlogShare" as the app name because we weren't sure of the fi
 ### [BONUS] Interactive Prototype
 ![RPReplay_Final1682997091](https://user-images.githubusercontent.com/18317412/235575452-5a51e161-9f57-4499-b4e8-5c71a42e7198.gif)
 
+## Demo
+
+[![name](https://i.imgur.com/UCE3imo.png%7Cwidth=200)](https://www.youtube.com/watch?v=nItPT-PM564)
+
 ## Schema
-** Post: **
-    - Object ID
-    - Summary
-    - ACL
-    - user
-    - updatedAt
-    - imageFile
-    - title
-    - content
-    - createdAt
+
+**Post:**
+
+    - Object ID  
+    - Summary  
+    - ACL  
+    - user  
+    - updatedAt  
+    - imageFile  
+    - title  
+    - content  
+    - createdAt  
 
 ### Networking
 - Parse Back4App DB, https://parse-dashboard.back4app.com/apps
