@@ -107,7 +107,7 @@ The Wireframes say "BlogShare" as the app name because we weren't sure of the fi
 
 ## Demo (Video Walkthrough)
 
-[![name](https://i.imgur.com/UCE3imo.png](https://www.youtube.com/watch?v=nItPT-PM564)
+[![name](https://i.imgur.com/UCE3imo.png)](https://www.youtube.com/watch?v=nItPT-PM564)
 
 ## Schema
 ** Post: **
