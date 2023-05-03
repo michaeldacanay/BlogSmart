@@ -107,7 +107,7 @@ The Wireframes say "BlogShare" as the app name because we weren't sure of the fi
 
 ## Demo
 <a href="https://www.youtube.com/watch?v=nItPT-PM564" target="_blank">
-  <img src="https://i.imgur.com/UCE3imo.png" width="200" border="0" />
+  <img src="https://imgur.com/UjaUkQI" height="250" border="0" />
 </a>
 
 ## Schema
