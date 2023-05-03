@@ -103,7 +103,7 @@ The Wireframes say "BlogShare" as the app name because we weren't sure of the fi
 <img src="https://i.imgur.com/WyAoGg2.png" width=700>
 
 ### [BONUS] Interactive Prototype
-<img src="https://user-images.githubusercontent.com/18317412/235575452-5a51e161-9f57-4499-b4e8-5c71a42e7198.gif" height="400" width="220"/>
+<img src="https://user-images.githubusercontent.com/18317412/235575452-5a51e161-9f57-4499-b4e8-5c71a42e7198.gif" height="400" width="200"/>
 
 ## Demo
 <a href="https://www.youtube.com/watch?v=nItPT-PM564" target="_blank" rel="noopener noreferrer">
