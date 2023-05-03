@@ -106,7 +106,7 @@ The Wireframes say "BlogShare" as the app name because we weren't sure of the fi
 <img src="https://user-images.githubusercontent.com/18317412/235575452-5a51e161-9f57-4499-b4e8-5c71a42e7198.gif" height="400" width="190"/>
 
 ## Demo
-<a href="https://www.youtube.com/watch?v=nItPT-PM564" target="_blank" rel="noopener noreferrer">
+<a href="https://www.youtube.com/watch?v=nItPT-PM564" target="_blank">
   <img src="https://i.imgur.com/SaMaG6s.png" height="250" border="0" />
 </a>
 
