@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "BlogIT default image.png",
+      "filename" : "blogsmart.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "BlogIT default image 1.png",
+      "filename" : "blogsmart 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "BlogIT default image 2.png",
+      "filename" : "blogsmart 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
