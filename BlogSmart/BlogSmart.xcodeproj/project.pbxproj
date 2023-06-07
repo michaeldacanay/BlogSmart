@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A22881DF29F5FEF3007F48B9 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A22881DE29F5FEF3007F48B9 /* OpenAIKit */; };
 		A22881E429FB5DD2007F48B9 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22881E329FB5DD2007F48B9 /* WriteViewController.swift */; };
+		A22881EA29FCC824007F48B9 /* GPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22881E929FCC824007F48B9 /* GPTResponse.swift */; };
 		A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27AC8B729EC31450011E378 /* SignUpViewController.swift */; };
 		AF202F0929E889E600D18F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0829E889E600D18F2C /* AppDelegate.swift */; };
 		AF202F0B29E889E600D18F2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF202F0A29E889E600D18F2C /* SceneDelegate.swift */; };
@@ -21,6 +21,8 @@
 		AF202F2429E88A4A00D18F2C /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = AF202F2329E88A4A00D18F2C /* AlamofireImage */; };
 		AFA3139729FA22B4003719FE /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3139629FA22B4003719FE /* PostCell.swift */; };
 		AFA3139929FA2A5B003719FE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3139829FA2A5B003719FE /* Post.swift */; };
+		AFAD94482A007BF900510528 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD94472A007BF900510528 /* DetailViewController.swift */; };
+		AFF89DCF29FDB31300302838 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFF89DCE29FDB31300302838 /* Keys.plist */; };
 		BA1BA4F129EA503A00E13CDC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA4F029EA503A00E13CDC /* LoginViewController.swift */; };
 		BA1BA4F429EA534100E13CDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA4F329EA534100E13CDC /* User.swift */; };
 		BA1BA4F729EA571700E13CDC /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA4F629EA571700E13CDC /* ViewController+Extensions.swift */; };
@@ -29,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		A22881E329FB5DD2007F48B9 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		A22881E929FCC824007F48B9 /* GPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponse.swift; sourceTree = "<group>"; };
 		A27AC8B729EC31450011E378 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AF202F0529E889E600D18F2C /* BlogSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF202F0829E889E600D18F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,8 @@
 		AF202F1629E889E800D18F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA3139629FA22B4003719FE /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		AFA3139829FA2A5B003719FE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		AFAD94472A007BF900510528 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AFF89DCE29FDB31300302838 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		BA1BA4F029EA503A00E13CDC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA1BA4F329EA534100E13CDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA1BA4F629EA571700E13CDC /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -52,7 +57,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF202F2129E88A2E00D18F2C /* ParseSwift in Frameworks */,
-				A22881DF29F5FEF3007F48B9 /* OpenAIKit in Frameworks */,
 				AF202F1E29E88A1700D18F2C /* Alamofire in Frameworks */,
 				AF202F2429E88A4A00D18F2C /* AlamofireImage in Frameworks */,
 			);
@@ -88,6 +92,7 @@
 		AF202F0729E889E600D18F2C /* BlogSmart */ = {
 			isa = PBXGroup;
 			children = (
+				AFAD94462A007BD500510528 /* Detail */,
 				A22881E229FB5DBF007F48B9 /* Write */,
 				AFA3139529FA2231003719FE /* Feed */,
 				AFA3139329FA1F42003719FE /* Login */,
@@ -99,6 +104,7 @@
 				AF202F1129E889E800D18F2C /* Assets.xcassets */,
 				AF202F1329E889E800D18F2C /* LaunchScreen.storyboard */,
 				AF202F1629E889E800D18F2C /* Info.plist */,
+				AFF89DCE29FDB31300302838 /* Keys.plist */,
 			);
 			path = BlogSmart;
 			sourceTree = "<group>";
@@ -121,11 +127,20 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		AFAD94462A007BD500510528 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AFAD94472A007BF900510528 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		BA1BA4F229EA532A00E13CDC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BA1BA4F329EA534100E13CDC /* User.swift */,
 				AFA3139829FA2A5B003719FE /* Post.swift */,
+				A22881E929FCC824007F48B9 /* GPTResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,7 +174,6 @@
 				AF202F1D29E88A1700D18F2C /* Alamofire */,
 				AF202F2029E88A2E00D18F2C /* ParseSwift */,
 				AF202F2329E88A4A00D18F2C /* AlamofireImage */,
-				A22881DE29F5FEF3007F48B9 /* OpenAIKit */,
 			);
 			productName = BlogSmart;
 			productReference = AF202F0529E889E600D18F2C /* BlogSmart.app */;
@@ -193,7 +207,6 @@
 				AF202F1C29E88A1700D18F2C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AF202F1F29E88A2E00D18F2C /* XCRemoteSwiftPackageReference "Parse-Swift" */,
 				AF202F2229E88A4A00D18F2C /* XCRemoteSwiftPackageReference "AlamofireImage" */,
-				A22881DD29F5FEF3007F48B9 /* XCRemoteSwiftPackageReference "openai-kit" */,
 			);
 			productRefGroup = AF202F0629E889E600D18F2C /* Products */;
 			projectDirPath = "";
@@ -209,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF89DCF29FDB31300302838 /* Keys.plist in Resources */,
 				AF202F1529E889E800D18F2C /* LaunchScreen.storyboard in Resources */,
 				AF202F1229E889E800D18F2C /* Assets.xcassets in Resources */,
 				AF202F1029E889E600D18F2C /* Main.storyboard in Resources */,
@@ -222,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFAD94482A007BF900510528 /* DetailViewController.swift in Sources */,
 				BA1BA4F129EA503A00E13CDC /* LoginViewController.swift in Sources */,
 				A22881E429FB5DD2007F48B9 /* WriteViewController.swift in Sources */,
+				A22881EA29FCC824007F48B9 /* GPTResponse.swift in Sources */,
 				AF202F0D29E889E600D18F2C /* ReadViewController.swift in Sources */,
 				A27AC8B829EC31450011E378 /* SignUpViewController.swift in Sources */,
 				BA1BA4F929EA57F200E13CDC /* DateFormatter+Extensions.swift in Sources */,
@@ -456,14 +472,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A22881DD29F5FEF3007F48B9 /* XCRemoteSwiftPackageReference "openai-kit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dylanshine/openai-kit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		AF202F1C29E88A1700D18F2C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -491,11 +499,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A22881DE29F5FEF3007F48B9 /* OpenAIKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A22881DD29F5FEF3007F48B9 /* XCRemoteSwiftPackageReference "openai-kit" */;
-			productName = OpenAIKit;
-		};
 		AF202F1D29E88A1700D18F2C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AF202F1C29E88A1700D18F2C /* XCRemoteSwiftPackageReference "Alamofire" */;
