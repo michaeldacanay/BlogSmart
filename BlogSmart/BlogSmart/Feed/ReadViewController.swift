@@ -56,11 +56,15 @@ class ReadViewController: UIViewController {
            // Get the index path of the cell from the table view
            let indexPath = blogTable.indexPath(for: cell),
            // Get the detail view controller
-           let detailViewController = segue.destination as? DetailViewController {
-
+           let detailViewController = segue.destination as? DetailViewController
+        {
+            
             // Use the index path to get the associated post
-            let post = posts[indexPath.row]
-
+            var post = posts[indexPath.row]
+            if searching {
+                post = searchedPosts[indexPath.row]
+            }
+            
             // Set the post content on the detail view controller
             detailViewController.post = post
         }
