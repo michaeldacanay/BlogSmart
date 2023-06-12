@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -253,13 +253,13 @@
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcj-3m-xFZ" userLabel="content">
                                                                 <rect key="frame" x="0.0" y="32.666666666666686" width="353" height="612.33333333333326"/>
-                                                                <mutableString key="text">This is the best chocolate chip cookies recipe ever! No funny ingredients, no chilling time, etc. Just a simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that turns out perfectly every single time! 
+                                                                <string key="text">This is the best chocolate chip cookies recipe ever! No funny ingredients, no chilling time, etc. Just a simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that turns out perfectly every single time! 
 
 Everyone needs a classic chocolate chip cookie recipe in their repertoire, and this is mine. It is seriously the Best Chocolate Chip Cookie Recipe Ever! I have been making these for many, many years and everyone who tries them agrees they’re out-of-this-world delicious!
 
 Plus, there’s no funny ingredients, no chilling, etc. Just a simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that turns out perfectly every single time!
 
-These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy yet fully baked. Perfectly buttery and sweet.</mutableString>
+These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy yet fully baked. Perfectly buttery and sweet.</string>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -323,15 +323,15 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                 <rect key="frame" x="0.0" y="103" width="393" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="252" id="mjm-Yl-AqA" customClass="PostCell" customModule="BlogSmart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="252"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="184" id="mjm-Yl-AqA" customClass="PostCell" customModule="BlogSmart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mjm-Yl-AqA" id="3UO-qa-6I4">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="252"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="184"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-oy-y6X" userLabel="Main Stack View">
-                                                    <rect key="frame" x="16" y="16" width="361" height="220"/>
+                                                    <rect key="frame" x="16" y="16" width="361" height="152"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qXA-mI-coS" userLabel="Image Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="148.33333333333334"/>
@@ -352,21 +352,22 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="BmH-4i-x5v" userLabel="Title Stack View">
-                                                            <rect key="frame" x="136" y="0.0" width="225" height="217.33333333333334"/>
+                                                            <rect key="frame" x="136" y="0.0" width="225" height="145.66666666666666"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to bake the best cookies" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrx-gq-EI5" userLabel="Title">
                                                                     <rect key="frame" x="0.0" y="0.0" width="225" height="67"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="height" constant="67" id="4ZC-Iq-bVw"/>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="HyN-Tq-biB"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
                                                                     <color key="textColor" red="0.86260194690000003" green="0.55305580330000004" blue="0.19676201569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-SM-SpK" userLabel="Summary">
-                                                                    <rect key="frame" x="0.0" y="74.000000000000014" width="219.66666666666666" height="143.33333333333337"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-SM-SpK" userLabel="Summary">
+                                                                    <rect key="frame" x="0.0" y="74" width="219" height="71.666666666666686"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="143.33000000000001" id="Vnu-77-PX9"/>
+                                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="143.33000000000001" id="Vnu-77-PX9"/>
                                                                     </constraints>
                                                                     <string key="text">This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking!</string>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
