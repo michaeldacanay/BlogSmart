@@ -564,10 +564,78 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                     <view key="view" contentMode="scaleToFill" id="GlI-q3-fjl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Wgv-CJ-9V1">
+                                <rect key="frame" x="64" y="252.33333333333334" width="265" height="347.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQv-EP-mUy" userLabel="usernameLabel">
+                                        <rect key="frame" x="94.666666666666657" y="0.0" width="75.666666666666657" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="midacanay" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9f1-Yg-Gwh" userLabel="username">
+                                        <rect key="frame" x="0.0" y="45.333333333333343" width="265" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="265" id="bUw-WJ-Dc6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykx-fp-S3V" userLabel="emailLabel">
+                                        <rect key="frame" x="112.33333333333333" y="104.33333333333334" width="40.333333333333329" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mzdacana@ncsu.edu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKx-AY-3cD" userLabel="email">
+                                        <rect key="frame" x="0.0" y="149.66666666666666" width="265" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="265" id="XM7-em-d8k"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-qO-HiM" userLabel="passwordLabel">
+                                        <rect key="frame" x="96" y="208.66666666666666" width="73.333333333333314" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mjj-PA-GjU">
+                                        <rect key="frame" x="0.0" y="254" width="265" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="265" id="ss7-5R-Bdp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKr-4b-3WM">
+                                        <rect key="frame" x="102" y="313" width="61" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save">
+                                            <color key="baseBackgroundColor" red="0.3686274886" green="0.78823530669999997" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onSave:" destination="rwp-rU-1u9" eventType="touchUpInside" id="54I-5n-gOJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="h9G-u0-wqy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wgv-CJ-9V1" firstAttribute="centerX" secondItem="GlI-q3-fjl" secondAttribute="centerX" id="Ww3-t4-9Lx"/>
+                            <constraint firstItem="Wgv-CJ-9V1" firstAttribute="centerY" secondItem="GlI-q3-fjl" secondAttribute="centerY" id="mee-YO-s8V"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="HE9-k6-vVT"/>
+                    <connections>
+                        <outlet property="email" destination="HKx-AY-3cD" id="8Mm-eg-qXO"/>
+                        <outlet property="password" destination="Mjj-PA-GjU" id="UX6-Jd-xQR"/>
+                        <outlet property="username" destination="9f1-Yg-Gwh" id="8zA-3I-amj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGJ-jf-f6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
