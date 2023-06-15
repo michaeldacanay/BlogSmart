@@ -34,20 +34,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4G-Uv-ELs">
-                                                <rect key="frame" x="0.0" y="65" width="361" height="40"/>
+                                                <rect key="frame" x="40.666666666666657" y="65" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="JfL-0Q-Q3E"/>
-                                                    <constraint firstAttribute="width" constant="361" id="c22-nM-u6a"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="c22-nM-u6a"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaP-cT-9Au">
-                                                <rect key="frame" x="0.0" y="121" width="361" height="40"/>
+                                                <rect key="frame" x="40.666666666666657" y="121" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="361" id="FPR-Mo-IzD"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="FPR-Mo-IzD"/>
                                                     <constraint firstAttribute="height" constant="40" id="PWK-mB-tFo"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -439,6 +439,26 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1G7-nn-aEe" userLabel="Image Stack View">
+                                <rect key="frame" x="96.666666666666686" y="118" width="200" height="235"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="default_image" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-2N-M2a">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="kdG-OQ-FPX"/>
+                                            <constraint firstAttribute="height" constant="200" id="xHB-Wg-Zyp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSz-Qa-gyV">
+                                        <rect key="frame" x="33.333333333333329" y="200" width="133.33333333333337" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Choose Image"/>
+                                        <connections>
+                                            <action selector="onChooseImageTapped:" destination="XNQ-Xp-qBI" eventType="touchUpInside" id="WA7-Bz-dIh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wgq-Hg-7xo" userLabel="Content Stack View">
                                 <rect key="frame" x="30" y="373" width="333" height="396"/>
                                 <subviews>
@@ -463,33 +483,13 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1G7-nn-aEe" userLabel="Image Stack View">
-                                <rect key="frame" x="96.666666666666686" y="128" width="200" height="234.33333333333331"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="default_image" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-2N-M2a">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="kdG-OQ-FPX"/>
-                                            <constraint firstAttribute="height" constant="200" id="xHB-Wg-Zyp"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSz-Qa-gyV">
-                                        <rect key="frame" x="33.333333333333329" y="200" width="133.33333333333337" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Choose Image"/>
-                                        <connections>
-                                            <action selector="onChooseImageTapped:" destination="XNQ-Xp-qBI" eventType="touchUpInside" id="WA7-Bz-dIh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gu7-Cj-L4R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="centerX" secondItem="Sp5-OV-G2T" secondAttribute="centerX" id="3UR-DY-vvD"/>
                             <constraint firstItem="Gu7-Cj-L4R" firstAttribute="bottom" secondItem="Wgq-Hg-7xo" secondAttribute="bottom" id="L6m-70-HVt"/>
-                            <constraint firstItem="1G7-nn-aEe" firstAttribute="top" relation="lessThanOrEqual" secondItem="Gu7-Cj-L4R" secondAttribute="top" constant="25" id="W2h-tn-Wvb"/>
+                            <constraint firstItem="1G7-nn-aEe" firstAttribute="top" secondItem="Gu7-Cj-L4R" secondAttribute="top" constant="15" id="W2h-tn-Wvb"/>
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="leading" secondItem="Gu7-Cj-L4R" secondAttribute="leading" constant="30" id="dnI-2d-1zV"/>
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="centerY" secondItem="Sp5-OV-G2T" secondAttribute="centerY" constant="145" id="i75-h1-172"/>
                             <constraint firstItem="Wgq-Hg-7xo" firstAttribute="top" relation="lessThanOrEqual" secondItem="1G7-nn-aEe" secondAttribute="bottom" constant="20" id="kdC-bw-gOa"/>
@@ -577,7 +577,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="midacanay" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9f1-Yg-Gwh" userLabel="username">
                                         <rect key="frame" x="0.0" y="45.333333333333343" width="265" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="265" id="bUw-WJ-Dc6"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="265" id="bUw-WJ-Dc6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -591,7 +591,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mzdacana@ncsu.edu" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKx-AY-3cD" userLabel="email">
                                         <rect key="frame" x="0.0" y="149.66666666666666" width="265" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="265" id="XM7-em-d8k"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="265" id="XM7-em-d8k"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>

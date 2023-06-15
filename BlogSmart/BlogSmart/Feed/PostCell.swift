@@ -10,7 +10,6 @@ import Alamofire
 import AlamofireImage
 
 class PostCell: UITableViewCell {
-
     
     @IBOutlet weak var blogImage: UIImageView!
     @IBOutlet weak var blogDate: UILabel!
@@ -27,7 +26,7 @@ class PostCell: UITableViewCell {
             imageDataRequest = AF.request(imageUrl).responseImage() { [weak self] response in
                 switch response.result {
                 case .success(let image):
-                    print("✅ Post Saved!")
+                    print("✅ Successfully fetched image!")
                     // Set image view image with fetched image
                     self?.blogImage.image = image
                 case .failure(let error):
