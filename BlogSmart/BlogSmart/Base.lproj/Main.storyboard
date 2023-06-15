@@ -602,7 +602,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mjj-PA-GjU">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mjj-PA-GjU">
                                         <rect key="frame" x="0.0" y="254" width="265" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="265" id="ss7-5R-Bdp"/>
