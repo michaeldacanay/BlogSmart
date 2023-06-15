@@ -34,20 +34,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4G-Uv-ELs">
-                                                <rect key="frame" x="40.666666666666657" y="65" width="280" height="40"/>
+                                                <rect key="frame" x="30.666666666666657" y="65" width="300" height="40"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="JfL-0Q-Q3E"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="c22-nM-u6a"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="c22-nM-u6a"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaP-cT-9Au">
-                                                <rect key="frame" x="40.666666666666657" y="121" width="280" height="40"/>
+                                                <rect key="frame" x="30.666666666666657" y="121" width="300" height="40"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="FPR-Mo-IzD"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="FPR-Mo-IzD"/>
                                                     <constraint firstAttribute="height" constant="40" id="PWK-mB-tFo"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -121,31 +121,31 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-Cl-57g">
-                                                <rect key="frame" x="0.0" y="72" width="361" height="40"/>
+                                                <rect key="frame" x="30.666666666666657" y="72" width="300" height="40"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="bts-n0-Gnd"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="iL9-aL-Ouc"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="iL9-aL-Ouc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWg-BU-72W">
-                                                <rect key="frame" x="0.0" y="128" width="361" height="40"/>
+                                                <rect key="frame" x="30.666666666666657" y="128" width="300" height="40"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="c3H-a5-UkV"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="c3H-a5-UkV"/>
                                                     <constraint firstAttribute="height" constant="40" id="yPn-sM-xnu"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNg-6F-lsj">
-                                                <rect key="frame" x="0.0" y="184" width="361" height="40"/>
+                                                <rect key="frame" x="30.666666666666657" y="184" width="300" height="40"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="K2C-EQ-Yzz"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="QCe-7K-y3S"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="QCe-7K-y3S"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -333,17 +333,17 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-oy-y6X" userLabel="Main Stack View">
                                                     <rect key="frame" x="16" y="16" width="361" height="152"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qXA-mI-coS" userLabel="Image Stack View">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qXA-mI-coS" userLabel="Image Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="148.33333333333334"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="afJ-4m-F8i">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="afJ-4m-F8i">
                                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="120" id="jC9-he-B4Y"/>
                                                                         <constraint firstAttribute="height" constant="120" id="yaf-hF-eAF"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 13, 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-a4-ifJ" userLabel="Date Label">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="April 13, 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-a4-ifJ" userLabel="Date Label">
                                                                     <rect key="frame" x="7.3333333333333357" y="127.99999999999999" width="105.33333333333331" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -351,26 +351,26 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="BmH-4i-x5v" userLabel="Title Stack View">
-                                                            <rect key="frame" x="136" y="0.0" width="225" height="145.66666666666666"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="BmH-4i-x5v" userLabel="Title Stack View">
+                                                            <rect key="frame" x="136" y="0.0" width="225" height="124.33333333333333"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to bake the best cookies" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrx-gq-EI5" userLabel="Title">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="67"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="194.33333333333334" height="67"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="67" id="4ZC-Iq-bVw"/>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="HyN-Tq-biB"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                                     <color key="textColor" red="0.86260194690000003" green="0.55305580330000004" blue="0.19676201569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-SM-SpK" userLabel="Summary">
-                                                                    <rect key="frame" x="0.0" y="74" width="219" height="71.666666666666686"/>
+                                                                    <rect key="frame" x="0.0" y="74" width="224.33333333333334" height="50.333333333333343"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="143.33000000000001" id="Vnu-77-PX9"/>
                                                                     </constraints>
                                                                     <string key="text">This is the AI generated summary. Read this blog to learn how to make the best cookies ever. It will teach you the basics of perfect cookie baking!</string>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -440,7 +440,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1G7-nn-aEe" userLabel="Image Stack View">
-                                <rect key="frame" x="96.666666666666686" y="118" width="200" height="235"/>
+                                <rect key="frame" x="96.666666666666686" y="118" width="200" height="284"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="default_image" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcg-2N-M2a">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -450,7 +450,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSz-Qa-gyV">
-                                        <rect key="frame" x="33.333333333333329" y="200" width="133.33333333333337" height="35"/>
+                                        <rect key="frame" x="33.333333333333329" y="200" width="133.33333333333337" height="84"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Choose Image"/>
                                         <connections>
@@ -460,7 +460,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wgq-Hg-7xo" userLabel="Content Stack View">
-                                <rect key="frame" x="30" y="373" width="333" height="396"/>
+                                <rect key="frame" x="30" y="422" width="333" height="298"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noQ-kN-KU7">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="42"/>
@@ -471,7 +471,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WDP-d3-fJV">
-                                        <rect key="frame" x="0.0" y="57" width="333" height="339"/>
+                                        <rect key="frame" x="0.0" y="57" width="333" height="241"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                         <constraints>
@@ -703,7 +703,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VEc-fu-w0b"/>
+        <segue reference="Baa-2h-cbL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
