@@ -72,7 +72,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func showInvalidEmailAlert() {
-        let alertController = UIAlertController(title: "Opps...", message: "The email provided is invalid.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Oops...", message: "The email provided is invalid.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(action)
         present(alertController, animated: true)
