@@ -75,18 +75,21 @@ class SettingsViewController: UIViewController {
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
             
-            if var currentUser = User.current {
+            if var currentUser = User.current,
+               let currentUserId = currentUser.objectId{
                 
-                let query = Query<Post>()
+                let query = Post.query()
+                    .where("user" == currentUserId)
                 
-                query.whereKey("user", equalTo(key: currentUser)) // "user" is the pointer column to the User class
-//                let query = Query<Post>.query("user", .equalTo(currentUser))
-                
-                query?.find { result in
+                print("this is the user object id", currentUserId)
+                                
+                query.find { [weak self] result in
                     switch result {
                     case .success(let posts):
+                        print("inside query find, length of posts is ", posts.count)
                         // Posts associated with the user found
-                        self.deletePosts(posts) // Proceed with deleting the posts
+                        self?.deletePosts(posts) // Proceed with deleting the posts
+                        print("posts deleted. bye!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                     case .failure(let error):
                         // Handle the error retrieving posts
                         print("Error retrieving posts: \(error)")
@@ -116,6 +119,7 @@ class SettingsViewController: UIViewController {
     }
     
     func deletePosts(_ posts: [Post]) {
+        print("length of post is", posts.count)
         for post in posts {
             post.delete {
                 result in switch result {
