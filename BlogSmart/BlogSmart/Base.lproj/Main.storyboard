@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -566,7 +566,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Wgv-CJ-9V1">
-                                <rect key="frame" x="64" y="252.33333333333334" width="265" height="347.33333333333326"/>
+                                <rect key="frame" x="64" y="222.66666666666666" width="265" height="406.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQv-EP-mUy" userLabel="usernameLabel">
                                         <rect key="frame" x="94.666666666666657" y="0.0" width="75.666666666666657" height="20.333333333333332"/>
@@ -618,6 +618,16 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="onSave:" destination="rwp-rU-1u9" eventType="touchUpInside" id="54I-5n-gOJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfp-CB-vUX" userLabel="Delete">
+                                        <rect key="frame" x="62.333333333333329" y="372.33333333333337" width="140.66666666666669" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Delete Account">
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onDeleteClicked:" destination="rwp-rU-1u9" eventType="touchUpInside" id="zYa-iz-kRK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -719,6 +729,9 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
