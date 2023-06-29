@@ -81,44 +81,88 @@ class SettingsViewController: UIViewController {
                 let query = try? Post.query().where("user" == currentUser)
                 print("Current user id: ", currentUser.objectId!)
                 
-//                let group = DispatchGroup()
-
-//                group.enter()
-            
-//                DispatchQueue.global().async {
+                let group = DispatchGroup()
+                group.enter()
+                
+                DispatchQueue.global().async {
+                    print("DispatchQueue.global().async start")
                     // Executes the query asynchronously
-                    query?.find { [weak self] result in
+//                    [weak self]
+                    
+                    query?.find { result in
                         switch result {
-                        case .success(let posts):
-                            print("Successfully retrieved \(posts.count) posts.")
+                            case .success(let posts):
+                                print("Successfully retrieved \(posts.count) posts.")
+                                
+                                // Delete posts associated with the user
+    //                            self?.deletePosts(posts)
+                                for post in posts {
+                                    group.enter()
+                                    print("in post for loop start")
+                                    post.delete { result in
+                                        switch result {
+                                        case .success:
+                                            // Post deletion successful
+                                            print("Post deleted successfully")
+                                        
+                                        case .failure(let error):
+                                            // Handle the error that occurred during post deletion
+                                            print("Error deleting post: \(error)")
+                                        }
+                                        print("in post.delete")
+                                        group.leave()
+                                    }
+                                    
+                                    print("in post for loop end")
+                                }
+                                
+                                
+                            case .failure(let error):
+                                // Handle the error retrieving posts
+                                print("Error retrieving posts: \(error)")
                             
-                            // Delete posts associated with the user
-                            self?.deletePosts(posts)
-//                            group.leave()
-                            
-                        case .failure(let error):
-                            // Handle the error retrieving posts
-                            print("Error retrieving posts: \(error)")
+                            print("in query.find")
                         }
+                        print("in query.find switch statement")
+                        group.leave()
                     }
-//                }
-
-//                group.notify(queue: .main) {
-                    currentUser.delete { result in
-                        switch result {
-                        case .success:
-                            // Account deletion successful
-                            print("Account deleted successfully")
-                            
-                        case .failure(let error):
-                            // Handle the error that occurred during account deletion
-                            print("Error deleting account: \(error)")
+                    print("in DispatchQueue.global().async end")
+                }
+                
+                print("at group.wait 1")
+//                group.wait()
+                
+                group.notify(queue: .main) {
+                    print("second block")
+                    group.enter()
+                    DispatchQueue.global().async {
+                        currentUser.delete { result in
+                            switch result {
+                            case .success:
+                                // Account deletion successful
+                                print("Account deleted successfully")
+                                
+                            case .failure(let error):
+                                // Handle the error that occurred during account deletion
+                                print("Error deleting account: \(error)")
+                            }
+                            // group.leave() needs to be inside the asynchrounous function. This means that the function has completed processing and returned a result (success/failure)
+                            group.leave()
                         }
+                        
                     }
-//                }
+                }
+                
+                // catch-22: delete user means how to logout user? And if logout
+                // user, then that invalidates session token, and the session token
+                // is needed to delete user
+                group.notify(queue: .main) {
+                    print("in logout block")
+                    NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
+                    print("logging out dispatched")
+                }
+                
             }
-            
-            NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
