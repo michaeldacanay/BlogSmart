@@ -56,6 +56,7 @@ class SettingsViewController: UIViewController {
             }
         } else {
             print("No current user")
+            NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
         }
         
         if !email.text!.isEmpty || !username.text!.isEmpty || !password.text!.isEmpty {
@@ -165,6 +166,9 @@ class SettingsViewController: UIViewController {
                     print("logging out dispatched")
                 }
                 
+            } else {
+                print("No current user")
+                NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
             }
         }
         
