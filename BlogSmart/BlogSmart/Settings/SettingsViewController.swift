@@ -133,8 +133,9 @@ class SettingsViewController: UIViewController {
 //                group.wait()
                 
                 group.notify(queue: .main) {
-                    print("second block")
                     group.enter()
+                    print("second block")
+                    
                     DispatchQueue.global().async {
                         currentUser.delete { result in
                             switch result {
@@ -145,11 +146,12 @@ class SettingsViewController: UIViewController {
                             case .failure(let error):
                                 // Handle the error that occurred during account deletion
                                 print("Error deleting account: \(error)")
+                                
+                            print("in switch statement 2")
                             }
                             // group.leave() needs to be inside the asynchrounous function. This means that the function has completed processing and returned a result (success/failure)
                             group.leave()
                         }
-                        
                     }
                 }
                 
@@ -157,6 +159,7 @@ class SettingsViewController: UIViewController {
                 // user, then that invalidates session token, and the session token
                 // is needed to delete user
                 group.notify(queue: .main) {
+//                    group.wait()
                     print("in logout block")
                     NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
                     print("logging out dispatched")
