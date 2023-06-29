@@ -67,46 +67,55 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func onDeleteClicked(_ sender: Any) {
-        showConfirmDelete()
+        showConfirmDeleteAccount()
     }
     
-    private func showConfirmDelete() {
+    private func showConfirmDeleteAccount() {
         let alertController = UIAlertController(title: "Delete your account?", message: "This action will delete your account permanently and all the posts that you have created. You will not be able to restore your account or your posts. Are you sure?", preferredStyle: .alert)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
             
-            if var currentUser = User.current,
-               let currentUserId = currentUser.objectId{
+            if let currentUser = User.current {
                 
-                let query = Post.query()
-                    .where("user" == currentUserId)
+                // Get posts that user has authored
+                let query = try? Post.query().where("user" == currentUser)
+                print("Current user id: ", currentUser.objectId!)
                 
-                print("this is the user object id", currentUserId)
-                                
-                query.find { [weak self] result in
-                    switch result {
-                    case .success(let posts):
-                        print("inside query find, length of posts is ", posts.count)
-                        // Posts associated with the user found
-                        self?.deletePosts(posts) // Proceed with deleting the posts
-                        print("posts deleted. bye!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                    case .failure(let error):
-                        // Handle the error retrieving posts
-                        print("Error retrieving posts: \(error)")
-                    }
-                }
+//                let group = DispatchGroup()
 
-                currentUser.delete { result in
-                    switch result {
-                    case .success:
-                        // Account deletion successful
-                        print("Account deleted successfully")
-                        
-                    case .failure(let error):
-                        // Handle the error that occurred during account deletion
-                        print("Error deleting account: \(error)")
+//                group.enter()
+            
+//                DispatchQueue.global().async {
+                    // Executes the query asynchronously
+                    query?.find { [weak self] result in
+                        switch result {
+                        case .success(let posts):
+                            print("Successfully retrieved \(posts.count) posts.")
+                            
+                            // Delete posts associated with the user
+                            self?.deletePosts(posts)
+//                            group.leave()
+                            
+                        case .failure(let error):
+                            // Handle the error retrieving posts
+                            print("Error retrieving posts: \(error)")
+                        }
                     }
-                }
+//                }
+
+//                group.notify(queue: .main) {
+                    currentUser.delete { result in
+                        switch result {
+                        case .success:
+                            // Account deletion successful
+                            print("Account deleted successfully")
+                            
+                        case .failure(let error):
+                            // Handle the error that occurred during account deletion
+                            print("Error deleting account: \(error)")
+                        }
+                    }
+//                }
             }
             
             NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
@@ -121,8 +130,8 @@ class SettingsViewController: UIViewController {
     func deletePosts(_ posts: [Post]) {
         print("length of post is", posts.count)
         for post in posts {
-            post.delete {
-                result in switch result {
+            post.delete { result in
+                switch result {
                 case .success:
                     // Post deletion successful
                     print("Post deleted successfully")
