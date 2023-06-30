@@ -82,26 +82,23 @@ class SettingsViewController: UIViewController {
                 let query = try? Post.query().where("user" == currentUser)
                 print("Current user id: ", currentUser.objectId!)
                 
+                // Synchronize the execution of multiple tasks:
+                // 1. Delete posts 2. Delete user 3. Logout user session
                 let firstGroup = DispatchGroup()
                 let secondGroup = DispatchGroup()
                 firstGroup.enter()
-                secondGroup.enter()
+                secondGroup.enter() // lock the secondGroup.notify() block until secondGroup.leave() is called
                 
-                DispatchQueue.global().sync {
-                    print("DispatchQueue.global().async start")
-                    
-//                    [weak self]
+                // Executing a task on a background queue. QoS stands for "Quality of Service", indicating relative importance and priority of tasks that are executed on a dispatch queue
+                DispatchQueue.global(qos: .background).sync {
+
                     // Executes the query asynchronously
                     query?.find { result in
                         switch result {
                             case .success(let posts):
-                                print("Successfully retrieved \(posts.count) posts.")
-                                
                                 // Delete posts associated with the user
-    //                            self?.deletePosts(posts)
                                 for post in posts {
                                     firstGroup.enter()
-                                    print("in post for loop start")
                                     post.delete { result in
                                         switch result {
                                         case .success:
@@ -112,32 +109,19 @@ class SettingsViewController: UIViewController {
                                             // Handle the error that occurred during post deletion
                                             print("Error deleting post: \(error)")
                                         }
-                                        print("in post.delete")
                                         firstGroup.leave()
                                     }
-                                    
-                                    print("in post for loop end")
                                 }
-                                
                                 
                             case .failure(let error):
                                 // Handle the error retrieving posts
                                 print("Error retrieving posts: \(error)")
-                            
-                            print("in query.find")
                         }
-                        print("in query.find switch statement")
                         firstGroup.leave()
                     }
-                    print("in DispatchQueue.global().async end")
                 }
                 
-                print("at group.wait 1")
-//                group.wait()
-                
                 firstGroup.notify(queue: .main) {
-                    
-                    print("second block")
                     
                     DispatchQueue.global().sync {
                         currentUser.delete { result in
@@ -149,25 +133,16 @@ class SettingsViewController: UIViewController {
                             case .failure(let error):
                                 // Handle the error that occurred during account deletion
                                 print("Error deleting account: \(error)")
-                                
-                            print("in switch statement 2")
                             }
                             // group.leave() needs to be inside the asynchrounous function. This means that the function has completed processing and returned a result (success/failure)
                             secondGroup.leave()
                         }
                     }
                 }
-                
-//                group.wait()
-                
-                
-                // catch-22: delete user means how to logout user? And if logout
-                // user, then that invalidates session token, and the session token
-                // is needed to delete user
+
+                // logout invalidates the session token, any operations related to current user account must be done beforehand
                 secondGroup.notify(queue: .main) {
-                    print("in logout block")
                     NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
-                    print("logging out dispatched")
                 }
                 
             } else {
