@@ -96,6 +96,8 @@ class SettingsViewController: UIViewController {
                     query?.find { result in
                         switch result {
                             case .success(let posts):
+                                print("Successfully retrieved \(posts.count) posts.")
+                            
                                 // Delete posts associated with the user
                                 for post in posts {
                                     firstGroup.enter()
