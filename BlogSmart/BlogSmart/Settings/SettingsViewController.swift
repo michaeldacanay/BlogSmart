@@ -82,14 +82,16 @@ class SettingsViewController: UIViewController {
                 let query = try? Post.query().where("user" == currentUser)
                 print("Current user id: ", currentUser.objectId!)
                 
-                let group = DispatchGroup()
-                group.enter()
+                let firstGroup = DispatchGroup()
+                let secondGroup = DispatchGroup()
+                firstGroup.enter()
+                secondGroup.enter()
                 
-                DispatchQueue.global().async {
+                DispatchQueue.global().sync {
                     print("DispatchQueue.global().async start")
-                    // Executes the query asynchronously
-//                    [weak self]
                     
+//                    [weak self]
+                    // Executes the query asynchronously
                     query?.find { result in
                         switch result {
                             case .success(let posts):
@@ -98,7 +100,7 @@ class SettingsViewController: UIViewController {
                                 // Delete posts associated with the user
     //                            self?.deletePosts(posts)
                                 for post in posts {
-                                    group.enter()
+                                    firstGroup.enter()
                                     print("in post for loop start")
                                     post.delete { result in
                                         switch result {
@@ -111,7 +113,7 @@ class SettingsViewController: UIViewController {
                                             print("Error deleting post: \(error)")
                                         }
                                         print("in post.delete")
-                                        group.leave()
+                                        firstGroup.leave()
                                     }
                                     
                                     print("in post for loop end")
@@ -125,7 +127,7 @@ class SettingsViewController: UIViewController {
                             print("in query.find")
                         }
                         print("in query.find switch statement")
-                        group.leave()
+                        firstGroup.leave()
                     }
                     print("in DispatchQueue.global().async end")
                 }
@@ -133,11 +135,11 @@ class SettingsViewController: UIViewController {
                 print("at group.wait 1")
 //                group.wait()
                 
-                group.notify(queue: .main) {
-                    group.enter()
+                firstGroup.notify(queue: .main) {
+                    
                     print("second block")
                     
-                    DispatchQueue.global().async {
+                    DispatchQueue.global().sync {
                         currentUser.delete { result in
                             switch result {
                             case .success:
@@ -151,16 +153,18 @@ class SettingsViewController: UIViewController {
                             print("in switch statement 2")
                             }
                             // group.leave() needs to be inside the asynchrounous function. This means that the function has completed processing and returned a result (success/failure)
-                            group.leave()
+                            secondGroup.leave()
                         }
                     }
                 }
                 
+//                group.wait()
+                
+                
                 // catch-22: delete user means how to logout user? And if logout
                 // user, then that invalidates session token, and the session token
                 // is needed to delete user
-                group.notify(queue: .main) {
-//                    group.wait()
+                secondGroup.notify(queue: .main) {
                     print("in logout block")
                     NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
                     print("logging out dispatched")
