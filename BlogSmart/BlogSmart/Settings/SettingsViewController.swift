@@ -159,22 +159,6 @@ class SettingsViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-    func deletePosts(_ posts: [Post]) {
-        print("length of post is", posts.count)
-        for post in posts {
-            post.delete { result in
-                switch result {
-                case .success:
-                    // Post deletion successful
-                    print("Post deleted successfully")
-                case .failure(let error):
-                    // Handle the error that occurred during post deletion
-                    print("Error deleting post: \(error)")
-                }
-            }
-        }
-    }
-    
     func isValidEmail(_ email: String) -> Bool {
         let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
@@ -187,7 +171,4 @@ class SettingsViewController: UIViewController {
         alertController.addAction(action)
         present(alertController, animated: true)
     }
-
-    
-
 }
