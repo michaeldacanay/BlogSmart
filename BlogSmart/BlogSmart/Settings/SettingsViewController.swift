@@ -56,6 +56,7 @@ class SettingsViewController: UIViewController {
             }
         } else {
             print("No current user")
+            NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
         }
         
         if !email.text!.isEmpty || !username.text!.isEmpty || !password.text!.isEmpty {
@@ -63,6 +64,99 @@ class SettingsViewController: UIViewController {
             NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
         }
         
+    }
+    
+    
+    @IBAction func onDeleteClicked(_ sender: Any) {
+        showConfirmDeleteAccount()
+    }
+    
+    private func showConfirmDeleteAccount() {
+        let alertController = UIAlertController(title: "Delete your account?", message: "This action will delete your account permanently and all the posts that you have created. You will not be able to restore your account or your posts. Are you sure?", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            
+            if let currentUser = User.current {
+                
+                // Get posts that user has authored
+                let query = try? Post.query().where("user" == currentUser)
+                print("Current user id: ", currentUser.objectId!)
+                
+                // Synchronize the execution of multiple tasks:
+                // 1. Delete posts 2. Delete user 3. Logout user session
+                let firstGroup = DispatchGroup()
+                let secondGroup = DispatchGroup()
+                firstGroup.enter()
+                secondGroup.enter() // lock the secondGroup.notify() block until secondGroup.leave() is called
+                
+                // Executing a task on a background queue. QoS stands for "Quality of Service", indicating relative importance and priority of tasks that are executed on a dispatch queue
+                DispatchQueue.global(qos: .background).sync {
+
+                    // Executes the query asynchronously
+                    query?.find { result in
+                        switch result {
+                            case .success(let posts):
+                                print("Successfully retrieved \(posts.count) posts.")
+                            
+                                // Delete posts associated with the user
+                                for post in posts {
+                                    firstGroup.enter()
+                                    post.delete { result in
+                                        switch result {
+                                        case .success:
+                                            // Post deletion successful
+                                            print("Post deleted successfully")
+                                        
+                                        case .failure(let error):
+                                            // Handle the error that occurred during post deletion
+                                            print("Error deleting post: \(error)")
+                                        }
+                                        firstGroup.leave()
+                                    }
+                                }
+                                
+                            case .failure(let error):
+                                // Handle the error retrieving posts
+                                print("Error retrieving posts: \(error)")
+                        }
+                        firstGroup.leave()
+                    }
+                }
+                
+                firstGroup.notify(queue: .main) {
+                    
+                    DispatchQueue.global().sync {
+                        currentUser.delete { result in
+                            switch result {
+                            case .success:
+                                // Account deletion successful
+                                print("Account deleted successfully")
+                                
+                            case .failure(let error):
+                                // Handle the error that occurred during account deletion
+                                print("Error deleting account: \(error)")
+                            }
+                            // group.leave() needs to be inside the asynchrounous function. This means that the function has completed processing and returned a result (success/failure)
+                            secondGroup.leave()
+                        }
+                    }
+                }
+
+                // logout invalidates the session token, any operations related to current user account must be done beforehand
+                secondGroup.notify(queue: .main) {
+                    NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
+                }
+                
+            } else {
+                print("No current user")
+                NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
     
     func isValidEmail(_ email: String) -> Bool {
@@ -77,7 +171,4 @@ class SettingsViewController: UIViewController {
         alertController.addAction(action)
         present(alertController, animated: true)
     }
-
-    
-
 }
