@@ -17,12 +17,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var content: UILabel!
     
+    @IBOutlet weak var blogMenu: UIBarButtonItem!
+    
     private var imageDataRequest: DataRequest?
     
     var post: Post!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        blogMenu.menu = addMenuItems()
 
         // Do any additional setup after loading the view.
         blogTitle.text = post.title
@@ -52,6 +55,29 @@ class DetailViewController: UIViewController {
             author.text! += username
         }
         content.text = post.content
+    }
+    
+    func addMenuItems() -> UIMenu {
+        
+        let menuItems = UIMenu(title: "", options: .displayInline, children: [
+    
+            UIAction(title: "Block User", image: UIImage(systemName: "exclamationmark.octagon.fill"), attributes: .destructive, handler: { (_) in
+                
+                if var currentUser = User.current,
+                   var postUser = self.post.user {
+                    
+                    print(currentUser.blockedUsers)
+                    print("Current user is \(currentUser)")
+                    currentUser.blockedUsers?.append((postUser.objectId)!)
+                    print("Blocked users are \(currentUser.blockedUsers)")
+                    print("post user is ", postUser)
+                    try? currentUser.save()
+                    
+                }
+            })
+        ])
+        
+        return menuItems
     }
 
 }

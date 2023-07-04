@@ -26,6 +26,7 @@ struct User: ParseUser {
 
     // Custom properties.
     var lastPostedDate: Date?
+    var blockedUsers: [String]?
 }
 
 extension User {
@@ -33,5 +34,6 @@ extension User {
         self.username = username
         self.email = email
         self.password = password
+        self.blockedUsers = []
     }
 }

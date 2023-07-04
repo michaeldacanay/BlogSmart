@@ -298,11 +298,16 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                             <constraint firstAttribute="bottom" secondItem="8gS-eQ-DOw" secondAttribute="bottom" id="koC-ED-NUZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aYq-Ax-GEE"/>
+                    <navigationItem key="navigationItem" id="aYq-Ax-GEE">
+                        <barButtonItem key="rightBarButtonItem" image="ellipsis.circle" catalog="system" id="l1Y-1P-aLo">
+                            <color key="tintColor" red="0.89645550910000005" green="0.57476095839999997" blue="0.20448411180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="author" destination="7S0-RT-b4g" id="N53-U4-Be2"/>
                         <outlet property="blogDate" destination="EKv-gK-HMl" id="Qsg-Wl-Qbq"/>
                         <outlet property="blogImage" destination="JXE-Hp-ELi" id="rFZ-6k-IxK"/>
+                        <outlet property="blogMenu" destination="l1Y-1P-aLo" id="B6a-fx-iM1"/>
                         <outlet property="blogTitle" destination="FDP-Dz-4jh" id="UgU-S2-HUP"/>
                         <outlet property="content" destination="Wcj-3m-xFZ" id="cbG-OI-Scl"/>
                     </connections>
@@ -718,6 +723,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="default_image" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="highlighter" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
