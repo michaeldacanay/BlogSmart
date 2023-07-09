@@ -10,7 +10,7 @@ import Alamofire
 import AlamofireImage
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var blogImage: UIImageView!
     @IBOutlet weak var blogTitle: UILabel!
     @IBOutlet weak var blogDate: UILabel!
@@ -25,8 +25,20 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        blogMenu.menu = addMenuItems()
-
+        
+        // Make sure the user cannot block themselves!
+        if let currentUser = User.current,
+           let postUser = self.post.user {
+            
+            if currentUser.username == postUser.username {
+                blogMenu.isEnabled = false
+                blogMenu.width = 0
+            } else {
+                blogMenu.menu = addMenuItems()
+            }
+            
+        }
+        
         // Do any additional setup after loading the view.
         blogTitle.text = post.title
         // Image
@@ -46,9 +58,11 @@ class DetailViewController: UIViewController {
                 }
             }
         }
+        
         if let date = post.createdAt {
             blogDate.text = DateFormatter.postFormatter.string(from: date)
         }
+        
         if let user = post.user,
            let username = user.username {
             author.text = "by "
@@ -60,24 +74,46 @@ class DetailViewController: UIViewController {
     func addMenuItems() -> UIMenu {
         
         let menuItems = UIMenu(title: "", options: .displayInline, children: [
-    
-            UIAction(title: "Block User", image: UIImage(systemName: "exclamationmark.octagon.fill"), attributes: .destructive, handler: { (_) in
-                
-                if var currentUser = User.current,
-                   var postUser = self.post.user {
-                    
-                    print(currentUser.blockedUsers)
-                    print("Current user is \(currentUser)")
-                    currentUser.blockedUsers?.append((postUser.objectId)!)
-                    print("Blocked users are \(currentUser.blockedUsers)")
-                    print("post user is ", postUser)
-                    try? currentUser.save()
-                    
-                }
+            
+            UIAction(title: "Block User", image: UIImage(systemName: "person.crop.circle.fill.badge.xmark"), attributes: .destructive, handler: { (_) in
+                self.showConfirmBlockUser()
+            })
+            
+            ,
+            
+            UIAction(title: "Report this blog", image: UIImage(systemName: "exclamationmark.octagon.fill"), attributes: .destructive, handler: { (_) in
+                print("Flag user")
             })
         ])
         
         return menuItems
     }
-
+    
+    
+    private func showConfirmBlockUser() {
+        
+        // Confirm if the user wants to block the other user
+        let alertController = UIAlertController(title: "Block User?", message: "Once you block this user, we will remove their posts from your blog feed. This action cannot be undone. Are you sure?", preferredStyle: .alert)
+        
+        let blockAction = UIAlertAction(title: "Block", style: .destructive) { _ in
+            
+            if var currentUser = User.current,
+               let postUser = self.post.user,
+               let blockedUsers = currentUser.blockedUsers {
+                
+                print(blockedUsers)
+                print("Current user is \(currentUser)")
+                currentUser.blockedUsers?.append((postUser.objectId)!)
+                print("Blocked users are \(blockedUsers)")
+                print("post user is ", postUser)
+                try? currentUser.save()
+            }
+            NotificationCenter.default.post(name: Notification.Name("Go back to the initial screen"), object: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(blockAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
 }
