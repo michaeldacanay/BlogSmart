@@ -267,7 +267,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstItem="i6s-Yp-lO4" firstAttribute="top" secondItem="7FV-Sa-Fgt" secondAttribute="top" id="G2L-rn-Xwe"/>
                                                     <constraint firstAttribute="trailing" secondItem="i6s-Yp-lO4" secondAttribute="trailing" constant="20" id="Mcw-6Z-ylM"/>
@@ -736,11 +736,11 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

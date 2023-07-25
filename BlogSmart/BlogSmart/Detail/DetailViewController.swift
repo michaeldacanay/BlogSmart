@@ -8,8 +8,9 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import MessageUI
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var blogImage: UIImageView!
     @IBOutlet weak var blogTitle: UILabel!
@@ -82,13 +83,58 @@ class DetailViewController: UIViewController {
             ,
             
             UIAction(title: "Report this blog", image: UIImage(systemName: "exclamationmark.octagon.fill"), attributes: .destructive, handler: { (_) in
-                print("Flag user")
+                print("Flag user!")
+                self.sendEmail()
             })
         ])
         
         return menuItems
     }
     
+    func sendEmail() {
+        
+        guard MFMailComposeViewController.canSendMail() else {
+            // Device is not configured to send emails
+            // Handle this case appropriately (e.g., show an alert)
+            showAlert()
+            return
+        }
+        
+        let mailComposer = MFMailComposeViewController()
+        mailComposer.mailComposeDelegate = self
+        mailComposer.setToRecipients(["raunaqmalhotra02@gmail.com"])
+        mailComposer.setSubject("BlogSmart - Reporting a post")
+        mailComposer.setMessageBody("The post by \(post.user?.username ?? "the author") titled \"\(post.title!)\" violates the policy of this app. Please review this post.", isHTML: false)
+        
+        present(mailComposer, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        controller.dismiss(animated: true, completion: nil)
+        switch result {
+                case .sent:
+            
+            let alertController = UIAlertController(title: "Post reported!", message: "If you clicked on Send, we have sent your email to the developers of the app. The concerned post will be reviewed and if it violates any app policy, we will remove it from the app. Please allow 24-48 hours for a response on your requested report. If you would not like to see this post anymore, please consider blocking the user.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertController.addAction(okAction)
+            present(alertController, animated: true)
+            
+                case .saved:
+                    // Email was saved as a draft, no need to show an aleert
+                    break
+                case .cancelled:
+                    // User canceled the email composition, no need to show an alert
+                    break
+                case .failed:
+                    // Email sending failed
+                    break
+                @unknown default:
+                    // Handle any future cases if added by Apple
+                    break
+        }
+    }
     
     private func showConfirmBlockUser() {
         
@@ -114,6 +160,14 @@ class DetailViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alertController.addAction(blockAction)
         alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
+    
+    private func showAlert() {
+        let alertController = UIAlertController(title: "Cannot send Email", message: "Your device is not configured to send an email to flag this post. If you would not like to see this post, consider blocking the user.", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
         present(alertController, animated: true)
     }
 }
