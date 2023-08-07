@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ParseSwift
 
 class ReadViewController: UIViewController {
 
@@ -88,23 +89,29 @@ class ReadViewController: UIViewController {
         // Create the query to fetch posts
         // Any properties that are Parse objects are stored by reference in Parse DB and as such need to explicitly use `include_:)` to be included in query results.
         // Sort the posts by descending order based on the created at date
-        let query = Post.query()
-            .include("user")
-            .order([.descending("createdAt")])
         
-        // Fetch posts defined in the query (asynchronously)
-        query.find { [weak self] result in
-            switch result {
-            case .success(let posts):
-                // Update local posts property with fetched posts
-                self?.posts = posts
-            case .failure(let error):
-                self?.showAlert(description: error.localizedDescription)
-            }
+        if let currentUser = User.current,
+           let blockedUsers = currentUser.blockedUsers {
             
-            // Call the completion handler (regardless of error or success, this will signal the query finished)
-            // This is used to tell the pull-to-refresh control to stop refresshing
-            completion?()
+            let query = Post.query()
+                .include("user")
+                .where(notContainedIn(key: "user", array: blockedUsers))
+                .order([.descending("createdAt")])
+            
+            // Fetch posts defined in the query (asynchronously)
+            query.find { [weak self] result in
+                switch result {
+                case .success(let posts):
+                    // Update local posts property with fetched posts
+                    self?.posts = posts
+                case .failure(let error):
+                    self?.showAlert(description: error.localizedDescription)
+                }
+                
+                // Call the completion handler (regardless of error or success, this will signal the query finished)
+                // This is used to tell the pull-to-refresh control to stop refresshing
+                completion?()
+            }
         }
     }
 

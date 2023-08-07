@@ -267,7 +267,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstItem="i6s-Yp-lO4" firstAttribute="top" secondItem="7FV-Sa-Fgt" secondAttribute="top" id="G2L-rn-Xwe"/>
                                                     <constraint firstAttribute="trailing" secondItem="i6s-Yp-lO4" secondAttribute="trailing" constant="20" id="Mcw-6Z-ylM"/>
@@ -298,11 +298,16 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
                             <constraint firstAttribute="bottom" secondItem="8gS-eQ-DOw" secondAttribute="bottom" id="koC-ED-NUZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aYq-Ax-GEE"/>
+                    <navigationItem key="navigationItem" id="aYq-Ax-GEE">
+                        <barButtonItem key="rightBarButtonItem" image="ellipsis.circle" catalog="system" id="l1Y-1P-aLo">
+                            <color key="tintColor" red="0.89645550910000005" green="0.57476095839999997" blue="0.20448411180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="author" destination="7S0-RT-b4g" id="N53-U4-Be2"/>
                         <outlet property="blogDate" destination="EKv-gK-HMl" id="Qsg-Wl-Qbq"/>
                         <outlet property="blogImage" destination="JXE-Hp-ELi" id="rFZ-6k-IxK"/>
+                        <outlet property="blogMenu" destination="l1Y-1P-aLo" id="B6a-fx-iM1"/>
                         <outlet property="blogTitle" destination="FDP-Dz-4jh" id="UgU-S2-HUP"/>
                         <outlet property="content" destination="Wcj-3m-xFZ" id="cbG-OI-Scl"/>
                     </connections>
@@ -718,6 +723,7 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="default_image" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="highlighter" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
@@ -730,11 +736,11 @@ These are everything a chocolate chip cookie should be. Crispy and chewy. Doughy
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
